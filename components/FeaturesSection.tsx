@@ -33,11 +33,11 @@ const FeaturesSection: React.FC = () => {
         </FeatureCard>
         {/* FIX: Wrapped content inside FeatureCard to pass it as children prop. */}
         <FeatureCard title="The Landás System: A Narrative Choice">
-          After each battle, choose to **Slay** for material gain or **Spare** for mercy. Your alignment—Conquest, Balance, or Mercy—is independent of difficulty and purely shapes your narrative journey, influencing story outcomes and your ultimate ending.
+          After each battle, choose to <strong>Slay</strong> for material gain or <strong>Spare</strong> for mercy. Your alignment—Conquest, Balance, or Mercy—is independent of difficulty and purely shapes your narrative journey, influencing story outcomes and your ultimate ending.
         </FeatureCard>
         {/* FIX: Wrapped content inside FeatureCard to pass it as children prop. */}
         <FeatureCard title="Powerful Relics & Potions">
-          Discover and equip up to six **Agimat (Relics)**—powerful passive items that fundamentally change your run. Use single-use potions for a timely heal, a defensive boost, or to inflict elemental damage.
+          Discover and equip up to six <strong>Agimat (Relics)</strong>—powerful passive items that fundamentally change your run. Use single-use potions for a timely heal, a defensive boost, or to inflict elemental damage.
         </FeatureCard>
       </div>
     </Section>
