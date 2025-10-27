@@ -1,9 +1,10 @@
 
 import React from 'react';
+import bathalaHero from '../assets/images/bathala_hero.png';
 
 const HeroSection: React.FC = () => {
   return (
-    <section id="home" className="h-screen flex items-center justify-center relative bg-cover bg-center" style={{ backgroundImage: "url('/assets/images/bathala_hero.png')" }}>
+    <section id="home" className="h-screen flex items-center justify-center relative bg-cover bg-center" style={{ backgroundImage: `url(${bathalaHero})` }}>
       <div className="absolute inset-0 bg-black opacity-60"></div>
       <div className="relative z-10 text-center text-[#77888C] p-4">
         <h1 className="font-pixel text-7xl md:text-[12rem] lg:text-[14rem] xl:text-[16rem] tracking-tight mb-4">
