@@ -24,7 +24,7 @@ const ThesisSection: React.FC = () => {
           <p className="mb-4">The central technical contribution is a transparent, rule-based DDA system designed to maintain player "flow," addressing the research question: "How can a rule-based adaptive difficulty system be designed to maintain a state of 'flow' for players of varying skill levels?"</p>
            <ul className="list-disc list-inside space-y-2 pl-4 text-base">
             <li><strong className="text-[#77888C]">Methodology:</strong> We chose a rule-based approach for its transparency and reproducibility. The system is driven by a Player Performance Score (PPS) calculated from eight distinct, weighted performance factors.</li>
-            <li><strong className="text-[#77888C]">Implementation:</strong> The PPS score maps to difficulty tiers that dynamically adjust over 15 parameters, ensuring a fair but engaging challenge.</li>
+            <li><strong className="text-[#77888C]">Implementation:</strong> The PPS score maps to difficulty tiers that dynamically adjust gameplay experience, ensuring a fair but engaging challenge.</li>
           </ul>
         </div>
 

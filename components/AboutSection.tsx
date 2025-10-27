@@ -18,7 +18,7 @@ const AboutSection: React.FC = () => {
           <li>Olimberio, David Christian</li>
         </ul>
         <p>
-          We were advised and inspired by mythology experts <strong className="text-[#77888C]">Mr. Nitten Nair (CEO of Mythlok)</strong> and <strong className="text-[#77888C]">Sir Alymer of Y Realm Studios</strong>, whose guidance was invaluable in ensuring the respectful and authentic representation of Filipino culture.
+          We were advised and inspired by mythology experts <strong className="text-[#77888C]">Mr. Nitten Nair (CEO of Mythlok)</strong> and <strong className="text-[#77888C]">Sir A of Y Realm Studios</strong>, whose guidance was invaluable in ensuring the respectful and authentic representation of Filipino culture.
         </p>
       </div>
     </Section>
