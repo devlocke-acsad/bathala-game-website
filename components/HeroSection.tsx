@@ -6,7 +6,7 @@ const HeroSection: React.FC = () => {
     <section id="home" className="h-screen flex items-center justify-center relative bg-cover bg-center" style={{ backgroundImage: "url('/assets/images/bathala_hero.png')" }}>
       <div className="absolute inset-0 bg-black opacity-60"></div>
       <div className="relative z-10 text-center text-[#77888C] p-4">
-        <h1 className="font-pixel text-7xl md:text-9xl tracking-tight mb-4">
+        <h1 className="font-pixel text-7xl md:text-[12rem] lg:text-[14rem] xl:text-[16rem] tracking-tight mb-4">
           bathala
         </h1>
         <p className="font-dungeon text-xl md:text-2xl mb-2 uppercase">
