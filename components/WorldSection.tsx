@@ -8,7 +8,7 @@ const WorldSection: React.FC = () => {
     <Section id="world" className="bg-[#1a1315]">
       <SectionTitle>THE WORLD OF BATHALA</SectionTitle>
       <div className="space-y-6 text-lg leading-relaxed">
-        <h3 className="font-pixel text-3xl mb-4">A Realm of Myth and Corruption</h3>
+        <h3 className="font-dungeon text-3xl mb-4 uppercase">A Realm of Myth and Corruption</h3>
         <p>
           In the beginning, the divine union of Bathala and Amihan created the islands—a paradise where elemental spirits, the *anito*, lived in perfect balance. But this harmony was shattered. The *engkanto*, spirits of lies and illusion, have twisted the world, corrupting the noble guardians of nature and plunging the realm into chaos.
         </p>

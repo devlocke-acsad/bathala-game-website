@@ -11,7 +11,7 @@ const ThesisSection: React.FC = () => {
         <p>The development of *Bathala* is grounded in three core research pillars that collectively address challenges in game design, player engagement, and cultural heritage.</p>
         
         <div>
-          <h3 className="font-pixel text-3xl mb-4">1. Cultural Preservation through Interactive Media</h3>
+          <h3 className="font-dungeon text-3xl mb-4 uppercase">1. Cultural Preservation through Interactive Media</h3>
           <p className="mb-4">A primary objective is to demonstrate the viability of digital games as "interactive mythology museums." The project addresses the underrepresentation of Filipino folklore in gaming by developing a system to authentically integrate cultural narratives into game mechanics.</p>
           <ul className="list-disc list-inside space-y-2 pl-4 text-base">
             <li><strong className="text-white">Research Goal:</strong> To design a game as a medium for cultural preservation and education, revitalizing indigenous narratives for a modern audience.</li>
@@ -20,7 +20,7 @@ const ThesisSection: React.FC = () => {
         </div>
 
         <div>
-          <h3 className="font-pixel text-3xl mb-4">2. A Rule-Based Dynamic Difficulty Adjustment (DDA) System</h3>
+          <h3 className="font-dungeon text-3xl mb-4 uppercase">2. A Rule-Based Dynamic Difficulty Adjustment (DDA) System</h3>
           <p className="mb-4">The central technical contribution is a transparent, rule-based DDA system designed to maintain player "flow," addressing the research question: "How can a rule-based adaptive difficulty system be designed to maintain a state of 'flow' for players of varying skill levels?"</p>
            <ul className="list-disc list-inside space-y-2 pl-4 text-base">
             <li><strong className="text-white">Methodology:</strong> We chose a rule-based approach for its transparency and reproducibility. The system is driven by a Player Performance Score (PPS) calculated from eight distinct, weighted performance factors.</li>
@@ -29,7 +29,7 @@ const ThesisSection: React.FC = () => {
         </div>
 
         <div>
-          <h3 className="font-pixel text-3xl mb-4">3. A Delaunay-Inspired Procedural Content Generation (PCG) Framework</h3>
+          <h3 className="font-dungeon text-3xl mb-4 uppercase">3. A Delaunay-Inspired Procedural Content Generation (PCG) Framework</h3>
           <p className="mb-4">To ensure high replayability, we designed a novel PCG system for overworld map generation, implementing a graph-based corridor generation system that creates coherent and navigable levels.</p>
            <ul className="list-disc list-inside space-y-2 pl-4 text-base">
             <li><strong className="text-white">Methodology:</strong> The system uses a seven-stage pipeline inspired by Delaunay triangulation and A* pathfinding.</li>

@@ -18,7 +18,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
       </button>
       <nav className="flex flex-col items-center space-y-8">
         {NAV_LINKS.map((link: NavLink) => (
-          <a key={link.href} href={link.href} onClick={onClose} className="font-pixel text-4xl text-[#77888C] hover:text-white transition-colors">
+          <a key={link.href} href={link.href} onClick={onClose} className="font-dungeon text-4xl text-[#77888C] hover:text-white transition-colors uppercase">
             {link.label}
           </a>
         ))}

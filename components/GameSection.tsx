@@ -9,7 +9,7 @@ const GameSection: React.FC = () => {
       <SectionTitle>THE GAME</SectionTitle>
       <div className="space-y-12 text-lg leading-relaxed">
         <div>
-          <h3 className="font-pixel text-3xl mb-4">What is Bathala?</h3>
+          <h3 className="font-dungeon text-3xl mb-4 uppercase">What is Bathala?</h3>
           <p className="mb-4">
             *Bathala* is a single-player, deck-building roguelike set in a world steeped in Filipino mythology. The core of the game revolves around a unique **poker-based combat system**. You are the Babaylan, a spiritual leader tasked with a divine quest: to journey through corrupted lands and restore cosmic harmony.
           </p>
@@ -26,7 +26,7 @@ const GameSection: React.FC = () => {
           </p>
         </div>
         <div>
-          <h3 className="font-pixel text-3xl mb-4">A Mission of Cultural Revival</h3>
+          <h3 className="font-dungeon text-3xl mb-4 uppercase">A Mission of Cultural Revival</h3>
           <p className="mb-4">
             Beyond its complex mechanics, *Bathala* was created to address the underrepresentation of Filipino mythology in the global gaming landscape. While many games draw from Western and Japanese folklore, the rich pantheon of deities, spirits, and creatures from the Philippines remains largely untapped.
           </p>

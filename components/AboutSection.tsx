@@ -11,7 +11,7 @@ const AboutSection: React.FC = () => {
         <p className="mb-6">
           *Bathala* was developed as a Bachelor of Science in Computer Science thesis project at the University of Makati by:
         </p>
-        <ul className="font-pixel text-2xl space-y-2 mb-8 text-white">
+        <ul className="font-dungeon text-2xl space-y-2 mb-8 text-white uppercase">
           <li>Adizon, Exequel</li>
           <li>Cabus, Clement Harold Miguel</li>
           <li>Magtajas, Chester</li>

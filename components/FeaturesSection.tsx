@@ -4,7 +4,7 @@ import SectionTitle from './ui/SectionTitle';
 
 const FeatureCard = ({ title, children }: { title: string, children: React.ReactNode }) => (
   <div className="border border-[#77888C]/30 p-6">
-    <h4 className="font-pixel text-2xl mb-3 text-white">{title}</h4>
+    <h4 className="font-dungeon text-2xl mb-3 text-white uppercase">{title}</h4>
     <p className="leading-relaxed">{children}</p>
   </div>
 );

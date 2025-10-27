@@ -16,7 +16,7 @@ const Header: React.FC<HeaderProps> = ({ onMenuToggle }) => {
         </a>
         <nav className="hidden md:flex space-x-8 items-center">
           {NAV_LINKS.map((link: NavLink) => (
-            <a key={link.href} href={link.href} className="font-pixel text-lg text-[#77888C] hover:text-white transition-colors">
+            <a key={link.href} href={link.href} className="font-dungeon text-lg text-[#77888C] hover:text-white transition-colors uppercase">
               {link.label}
             </a>
           ))}
