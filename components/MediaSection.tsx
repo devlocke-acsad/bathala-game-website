@@ -5,7 +5,6 @@ import SectionTitle from './ui/SectionTitle';
 import bathalaTitle from '../assets/videos/title.gif';
 import combat from '../assets/images/combat.png';
 import overworld_map from '../assets/images/overworld_map.png';
-
 import overworldGif from '../assets/videos/overworld.gif';
 import combatgif from  "../assets/videos/combat.gif";
 
