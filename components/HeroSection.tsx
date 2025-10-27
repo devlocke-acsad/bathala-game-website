@@ -16,7 +16,7 @@ const HeroSection: React.FC = () => {
           Wield divine power in a Filipino mythology-inspired roguelike where poker meets ancient spirits. Can you restore what was broken?
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="#" className="font-dungeon text-xl border-2 border-[#77888C] px-8 py-3 hover:bg-[#77888C] hover:text-[#150E10] transition-colors duration-300 uppercase">
+          <a href="https://play.bathala.quest" className="font-dungeon text-xl border-2 border-[#77888C] px-8 py-3 hover:bg-[#77888C] hover:text-[#150E10] transition-colors duration-300 uppercase">
             Play Now
           </a>
           <a href="#game" className="font-dungeon text-xl border-2 border-[#77888C] px-8 py-3 hover:bg-[#77888C] hover:text-[#150E10] transition-colors duration-300 uppercase">
