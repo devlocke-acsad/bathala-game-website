@@ -47,7 +47,7 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-4 flex items-center justify-between h-16">
-        <a href="#home" className="font-display text-[10px] text-gold">
+        <a href="#home" className="font-display text-[15px] text-gold">
           BATHALA
         </a>
 
@@ -57,7 +57,7 @@ const Navbar = () => {
             <a
               key={item.href}
               href={item.href}
-              className={`relative font-display text-[8px] tracking-wider uppercase transition-colors duration-200 pb-1 ${
+              className={`relative font-display text-[13px] tracking-wider uppercase transition-colors duration-200 pb-1 ${
                 activeSection === item.href.slice(1)
                   ? 'text-gold'
                   : 'text-muted-foreground hover:text-foreground'
@@ -95,7 +95,7 @@ const Navbar = () => {
               key={item.href}
               href={item.href}
               onClick={() => setIsOpen(false)}
-              className={`block px-6 py-3 font-display text-[9px] tracking-wider uppercase ${
+              className={`block px-6 py-3 font-display text-[14px] tracking-wider uppercase ${
                 activeSection === item.href.slice(1)
                   ? 'text-gold'
                   : 'text-muted-foreground hover:text-foreground'

@@ -81,13 +81,13 @@ const FeaturesSection = () => {
                     <span className="font-display text-lg text-gold/30 leading-none block">
                       {feat.stat}
                     </span>
-                    <span className="font-display text-[5px] tracking-wider text-gold/40">
+                    <span className="font-display text-[10px] tracking-wider text-gold/40">
                       {feat.statLabel}
                     </span>
                   </div>
                 </div>
 
-                <h3 className="font-display text-[8px] tracking-wider text-foreground mb-3 group-hover:text-gold transition-colors leading-loose">
+                <h3 className="font-display text-[13px] tracking-wider text-foreground mb-3 group-hover:text-gold transition-colors leading-loose">
                   {feat.title}
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed font-body">
@@ -104,7 +104,7 @@ const FeaturesSection = () => {
                   className="overflow-hidden"
                 >
                   <div className="pt-4 mt-4 border-t border-gold/10">
-                    <p className="font-display text-[6px] tracking-wider text-gold/50 mb-1">
+                    <p className="font-display text-[11px] tracking-wider text-gold/50 mb-1">
                       ▸ HOW IT WORKS
                     </p>
                     <p className="text-muted-foreground text-xs leading-relaxed font-body">
@@ -113,7 +113,7 @@ const FeaturesSection = () => {
                   </div>
                 </motion.div>
 
-                <div className="mt-3 font-display text-[5px] tracking-wider text-gold/30 group-hover:text-gold/60 transition-colors">
+                <div className="mt-3 font-display text-[10px] tracking-wider text-gold/30 group-hover:text-gold/60 transition-colors">
                   {expanded === i ? '▲ COLLAPSE' : '▼ TAP FOR DETAILS'}
                 </div>
               </div>

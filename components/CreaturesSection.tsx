@@ -149,7 +149,7 @@ const CreaturesSection = () => {
                 setActiveChapter(i);
                 setSelectedCreature(null);
               }}
-              className={`font-display text-[8px] tracking-[0.2em] px-5 py-3 border transition-all duration-300 ${
+              className={`font-display text-[13px] tracking-[0.2em] px-5 py-3 border transition-all duration-300 ${
                 activeChapter === i
                   ? 'border-gold/60 bg-gold/10 text-gold'
                   : 'border-gold/10 bg-background/50 text-muted-foreground hover:border-gold/30 hover:text-foreground'
@@ -197,16 +197,16 @@ const CreaturesSection = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
 
                     <div className="absolute top-3 right-3">
-                      <span className={`font-display text-[6px] tracking-[0.2em] px-2 py-1 border ${ELEMENT_COLORS[creature.element]}`}>
+                      <span className={`font-display text-[11px] tracking-[0.2em] px-2 py-1 border ${ELEMENT_COLORS[creature.element]}`}>
                         {creature.element}
                       </span>
                     </div>
 
                     <div className="absolute bottom-0 left-0 right-0 p-4">
-                      <p className="font-display text-[6px] tracking-[0.25em] text-gold/50 mb-1">
+                      <p className="font-display text-[11px] tracking-[0.25em] text-gold/50 mb-1">
                         {creature.role.toUpperCase()}
                       </p>
-                      <h3 className="font-display text-[11px] tracking-wider text-foreground group-hover:text-gold transition-colors">
+                      <h3 className="font-display text-[16px] tracking-wider text-foreground group-hover:text-gold transition-colors">
                         {creature.name.toUpperCase()}
                       </h3>
                     </div>
@@ -234,14 +234,14 @@ const CreaturesSection = () => {
                       />
                       <div className="flex-1">
                         <div className="flex items-center gap-3 mb-2 flex-wrap">
-                          <h4 className="font-display text-[12px] tracking-wider text-gold">
+                          <h4 className="font-display text-[18px] tracking-wider text-gold">
                             {selectedCreature.name.toUpperCase()}
                           </h4>
-                          <span className={`font-display text-[6px] tracking-[0.2em] px-2 py-1 border ${ELEMENT_COLORS[selectedCreature.element]}`}>
+                          <span className={`font-display text-[11px] tracking-[0.2em] px-2 py-1 border ${ELEMENT_COLORS[selectedCreature.element]}`}>
                             {selectedCreature.element}
                           </span>
                         </div>
-                        <p className="font-display text-[7px] tracking-[0.2em] text-muted-foreground mb-3">
+                        <p className="font-display text-[12px] tracking-[0.2em] text-muted-foreground mb-3">
                           {selectedCreature.role.toUpperCase()}
                         </p>
                         <p className="text-foreground/80 text-sm leading-relaxed font-body">

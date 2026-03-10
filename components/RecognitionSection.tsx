@@ -32,7 +32,7 @@ const RecognitionSection = () => {
               {['PRO GAME FINALIST', 'BEST NARRATIVE', 'BEST AUDIO'].map((tag) => (
                 <span
                   key={tag}
-                  className="font-display text-[7px] tracking-wider px-3 py-2 border border-gold/30 text-gold bg-gold/5 pixel-border"
+                  className="font-display text-[12px] tracking-wider px-3 py-2 border border-gold/30 text-gold bg-gold/5 pixel-border"
                 >
                   {tag}
                 </span>

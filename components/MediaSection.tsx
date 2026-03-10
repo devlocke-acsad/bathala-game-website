@@ -102,7 +102,7 @@ const MediaSection = () => {
           </div>
           <div className="flex items-center justify-center gap-3 mt-4">
             <Play className="w-3 h-3 text-gold/60" />
-            <p className="font-display text-[7px] tracking-[0.2em] text-gold/60">
+            <p className="font-display text-[12px] tracking-[0.2em] text-gold/60">
               PLAY BATHALA ON ITCH.IO
             </p>
           </div>
@@ -112,7 +112,7 @@ const MediaSection = () => {
         <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
           <button
             onClick={() => setFilter(null)}
-            className={`font-display text-[7px] tracking-wider px-3 py-1.5 border transition-all duration-200 ${
+            className={`font-display text-[12px] tracking-wider px-3 py-1.5 border transition-all duration-200 ${
               filter === null
                 ? "border-gold/50 text-gold bg-gold/10"
                 : "border-gold/15 text-muted-foreground hover:text-foreground hover:border-gold/30"
@@ -124,7 +124,7 @@ const MediaSection = () => {
             <button
               key={tag}
               onClick={() => setFilter(filter === tag ? null : tag)}
-              className={`font-display text-[7px] tracking-wider px-3 py-1.5 border transition-all duration-200 ${
+              className={`font-display text-[12px] tracking-wider px-3 py-1.5 border transition-all duration-200 ${
                 filter === tag
                   ? "border-gold/50 text-gold bg-gold/10"
                   : "border-gold/15 text-muted-foreground hover:text-foreground hover:border-gold/30"
@@ -166,14 +166,14 @@ const MediaSection = () => {
 
                   {/* Tag badge */}
                   <div className="absolute top-3 left-3 z-10">
-                    <span className="font-display text-[6px] tracking-[0.2em] px-2 py-1 bg-background/80 border border-gold/20 text-gold">
+                    <span className="font-display text-[11px] tracking-[0.2em] px-2 py-1 bg-background/80 border border-gold/20 text-gold">
                       {img.tag}
                     </span>
                   </div>
 
                   {isGif && (
                     <div className="absolute top-3 right-3 z-10">
-                      <span className="font-display text-[6px] tracking-wider px-2 py-1 bg-gold/90 text-primary-foreground">
+                      <span className="font-display text-[11px] tracking-wider px-2 py-1 bg-gold/90 text-primary-foreground">
                         GIF
                       </span>
                     </div>
@@ -181,12 +181,12 @@ const MediaSection = () => {
 
                   {/* Hover overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5">
-                    <p className="font-display text-[7px] tracking-wider text-gold leading-loose mb-2">
+                    <p className="font-display text-[12px] tracking-wider text-gold leading-loose mb-2">
                       {img.caption}
                     </p>
                     <div className="flex items-center gap-1 text-gold/60">
                       <Maximize2 className="w-3 h-3" />
-                      <span className="font-display text-[6px] tracking-wider">
+                      <span className="font-display text-[11px] tracking-wider">
                         CLICK TO EXPAND
                       </span>
                     </div>
@@ -257,10 +257,10 @@ const MediaSection = () => {
                 className="max-w-full max-h-[70vh] object-contain"
               />
               <div className="text-center mt-6 space-y-2">
-                <span className="font-display text-[6px] tracking-[0.3em] px-3 py-1 border border-gold/20 text-gold/60">
+                <span className="font-display text-[11px] tracking-[0.3em] px-3 py-1 border border-gold/20 text-gold/60">
                   {GALLERY[lightbox].tag}
                 </span>
-                <p className="font-display text-[8px] tracking-wider text-gold leading-loose">
+                <p className="font-display text-[13px] tracking-wider text-gold leading-loose">
                   {GALLERY[lightbox].caption}
                 </p>
                 <div className="flex items-center justify-center gap-2 mt-4">

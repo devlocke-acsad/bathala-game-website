@@ -53,7 +53,7 @@ const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
             />
           </div>
 
-          <p className="font-display text-[8px] text-gold/60 tracking-wider mt-4">
+          <p className="font-display text-[13px] text-gold/60 tracking-wider mt-4">
             {phase === 'ready' ? 'PRESS START' : 'LOADING REALM...'}
           </p>
 

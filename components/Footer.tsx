@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div className="md:col-span-1">
-            <h3 className="font-display text-[10px] text-gold mb-3 leading-loose">BATHALA</h3>
+            <h3 className="font-display text-[15px] text-gold mb-3 leading-loose">BATHALA</h3>
             <p className="text-muted-foreground text-sm leading-relaxed font-body">
               Mend the Shattered Balance. A Filipino mythology-inspired roguelike card game.
             </p>
@@ -18,7 +18,7 @@ const Footer = () => {
 
           {/* Links */}
           <div>
-            <h4 className="font-display text-[7px] tracking-[0.2em] text-foreground mb-4 leading-loose">
+            <h4 className="font-display text-[12px] tracking-[0.2em] text-foreground mb-4 leading-loose">
               LINKS
             </h4>
             <div className="space-y-2 font-body">
@@ -43,7 +43,7 @@ const Footer = () => {
 
           {/* Social */}
           <div>
-            <h4 className="font-display text-[7px] tracking-[0.2em] text-foreground mb-4 leading-loose">
+            <h4 className="font-display text-[12px] tracking-[0.2em] text-foreground mb-4 leading-loose">
               SOCIAL
             </h4>
             <div className="space-y-2 font-body">
@@ -61,7 +61,7 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="font-display text-[7px] tracking-[0.2em] text-foreground mb-4 leading-loose">
+            <h4 className="font-display text-[12px] tracking-[0.2em] text-foreground mb-4 leading-loose">
               CONTACT
             </h4>
             <a
@@ -78,14 +78,14 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gold/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-muted-foreground/60 text-[7px] font-display tracking-wider">
+          <p className="text-muted-foreground/60 text-[12px] font-display tracking-wider">
             © 2025 DEVLOCKE STUDIOS
           </p>
           <a
             href={SURVEY_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-display text-[7px] tracking-wider text-gold hover:text-gold transition-colors"
+            className="font-display text-[12px] tracking-wider text-gold hover:text-gold transition-colors"
           >
             📋 TAKE OUR THESIS SURVEY
           </a>

@@ -74,10 +74,10 @@ const WorldSection = () => {
                   </div>
 
                   <div>
-                    <span className="font-display text-[7px] tracking-[0.3em] text-gold/60 block mb-2">
+                    <span className="font-display text-[12px] tracking-[0.3em] text-gold/60 block mb-2">
                       CHAPTER {ch.num}
                     </span>
-                    <h3 className="font-display text-[9px] text-foreground tracking-wider leading-loose mb-3 group-hover:text-gold transition-colors">
+                    <h3 className="font-display text-[14px] text-foreground tracking-wider leading-loose mb-3 group-hover:text-gold transition-colors">
                       {ch.title.toUpperCase()}
                     </h3>
                     <p className="text-muted-foreground text-sm leading-relaxed font-body mb-4">
@@ -88,7 +88,7 @@ const WorldSection = () => {
                       {ch.enemies.map((enemy) => (
                         <span
                           key={enemy}
-                          className="font-display text-[5px] tracking-wider px-2 py-1 bg-background/50 border border-gold/15 text-gold/60"
+                          className="font-display text-[10px] tracking-wider px-2 py-1 bg-background/50 border border-gold/15 text-gold/60"
                         >
                           {enemy.toUpperCase()}
                         </span>

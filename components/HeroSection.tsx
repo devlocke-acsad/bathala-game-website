@@ -63,7 +63,7 @@ const HeroSection = () => {
         </motion.h1>
 
         <motion.div
-          className="font-display text-[10px] sm:text-xs tracking-[0.3em] uppercase text-gold mb-8 leading-loose h-6"
+          className="font-display text-[15px] sm:text-sm tracking-[0.3em] uppercase text-gold mb-8 leading-loose h-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.3, delay: 0.6 }}
@@ -87,7 +87,7 @@ const HeroSection = () => {
 
         {/* Social proof */}
         <motion.p
-          className="text-[9px] sm:text-[10px] font-display tracking-wider text-gold/80 mb-10 leading-loose"
+          className="text-[14px] sm:text-[15px] font-display tracking-wider text-gold/80 mb-10 leading-loose"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 3.5 }}
@@ -105,13 +105,13 @@ const HeroSection = () => {
             href="https://play.bathala.quest/"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-display tracking-[0.15em] text-[10px] px-8 py-4 bg-gold text-primary-foreground hover:bg-gold-light transition-all duration-300 glow-gold pixel-border"
+            className="font-display tracking-[0.15em] text-[15px] px-8 py-4 bg-gold text-primary-foreground hover:bg-gold-light transition-all duration-300 glow-gold pixel-border"
           >
             ▶ PLAY NOW
           </a>
           <a
             href="#game"
-            className="font-display tracking-[0.15em] text-[10px] px-8 py-4 border-2 border-gold/40 text-gold hover:bg-gold/10 transition-all duration-300"
+            className="font-display tracking-[0.15em] text-[15px] px-8 py-4 border-2 border-gold/40 text-gold hover:bg-gold/10 transition-all duration-300"
           >
             ↓ LEARN MORE
           </a>

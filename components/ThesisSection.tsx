@@ -64,11 +64,11 @@ const ThesisSection = () => {
               <div className="flex items-center gap-3">
                 <span className="text-xl">{p.icon}</span>
                 <div>
-                  <span className="font-display text-[6px] tracking-wider text-gold/50 block">
+                  <span className="font-display text-[11px] tracking-wider text-gold/50 block">
                     PILLAR {p.num}
                   </span>
                   <span
-                    className={`font-display text-[8px] tracking-wider transition-colors ${
+                    className={`font-display text-[13px] tracking-wider transition-colors ${
                       activeIndex === i ? "text-gold" : "text-foreground"
                     }`}
                   >
@@ -94,10 +94,10 @@ const ThesisSection = () => {
               <div className="flex items-center gap-3 mb-2">
                 <span className="text-2xl">{active.icon}</span>
                 <div>
-                  <h3 className="font-display text-[10px] md:text-xs text-foreground tracking-wider leading-loose">
+                  <h3 className="font-display text-[15px] md:text-sm text-foreground tracking-wider leading-loose">
                     {active.title}
                   </h3>
-                  <p className="font-display text-[7px] text-gold/50 tracking-wider">
+                  <p className="font-display text-[12px] text-gold/50 tracking-wider">
                     {active.subtitle}
                   </p>
                 </div>
@@ -105,7 +105,7 @@ const ThesisSection = () => {
 
               <div className="space-y-5 mt-6 font-body">
                 <div>
-                  <span className="font-display text-[7px] tracking-[0.2em] text-gold block mb-2">
+                  <span className="font-display text-[12px] tracking-[0.2em] text-gold block mb-2">
                     ◆ RESEARCH GOAL
                   </span>
                   <p className="text-foreground leading-relaxed text-base">
@@ -113,7 +113,7 @@ const ThesisSection = () => {
                   </p>
                 </div>
                 <div>
-                  <span className="font-display text-[7px] tracking-[0.2em] text-gold block mb-2">
+                  <span className="font-display text-[12px] tracking-[0.2em] text-gold block mb-2">
                     ◆ METHODOLOGY
                   </span>
                   <p className="text-muted-foreground leading-relaxed">
@@ -125,7 +125,7 @@ const ThesisSection = () => {
 
             {/* Right — key terms */}
             <div className="md:w-48 flex flex-row md:flex-col gap-2">
-              <span className="font-display text-[6px] tracking-[0.3em] text-gold/40 mb-1 hidden md:block">
+              <span className="font-display text-[11px] tracking-[0.3em] text-gold/40 mb-1 hidden md:block">
                 KEY AREAS
               </span>
               {active.highlights.map((h) => (
@@ -133,7 +133,7 @@ const ThesisSection = () => {
                   key={h}
                   className="px-3 py-2 bg-gold/5 border border-gold/15 text-center"
                 >
-                  <span className="font-display text-[6px] tracking-wider text-gold/70">
+                  <span className="font-display text-[11px] tracking-wider text-gold/70">
                     {h.toUpperCase()}
                   </span>
                 </div>

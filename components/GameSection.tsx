@@ -12,7 +12,7 @@ const GameSection = () => {
 
         <div className="grid md:grid-cols-2 gap-12 mb-16">
           <div>
-            <h3 className="font-display text-[10px] text-gold tracking-wider mb-4 leading-loose">
+            <h3 className="font-display text-[15px] text-gold tracking-wider mb-4 leading-loose">
               WHAT IS BATHALA?
             </h3>
             <p className="text-foreground text-lg leading-relaxed mb-4 font-body">
@@ -47,7 +47,7 @@ const GameSection = () => {
               },
             ].map((item) => (
               <div key={item.title} className="border-l-2 border-gold/30 pl-6">
-                <h4 className="font-display text-[8px] tracking-wider text-gold mb-2 leading-loose">
+                <h4 className="font-display text-[13px] tracking-wider text-gold mb-2 leading-loose">
                   <span className="mr-2">{item.icon}</span>{item.title}
                 </h4>
                 <p className="text-muted-foreground leading-relaxed font-body">{item.desc}</p>
@@ -57,7 +57,7 @@ const GameSection = () => {
         </div>
 
         <div className="bg-secondary/50 border border-gold/10 p-8 md:p-12 pixel-border">
-          <h3 className="font-display text-[10px] text-gold tracking-wider mb-4 leading-loose">
+          <h3 className="font-display text-[15px] text-gold tracking-wider mb-4 leading-loose">
             A MISSION OF CULTURAL REVIVAL
           </h3>
           <p className="text-foreground text-lg leading-relaxed font-body">

@@ -42,10 +42,10 @@ const AboutSection = () => {
                   style={{ imageRendering: "auto" }}
                 />
               </div>
-              <p className="font-display text-[7px] tracking-wider text-foreground leading-loose">
+              <p className="font-display text-[12px] tracking-wider text-foreground leading-loose">
                 {member.name}
               </p>
-              <p className="font-display text-[6px] tracking-wider text-gold/50 mt-1">
+              <p className="font-display text-[11px] tracking-wider text-gold/50 mt-1">
                 {member.role}
               </p>
             </div>

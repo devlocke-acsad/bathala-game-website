@@ -18,7 +18,7 @@ const FloatingButtons = () => {
         href={SURVEY_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center gap-2 px-4 py-3 gradient-gold text-primary-foreground font-display text-[7px] tracking-wider shadow-lg hover:opacity-90 transition-all glow-gold pixel-border"
+        className="flex items-center gap-2 px-4 py-3 gradient-gold text-primary-foreground font-display text-[12px] tracking-wider shadow-lg hover:opacity-90 transition-all glow-gold pixel-border"
       >
         <ClipboardList className="w-3 h-3" />
         <span className="hidden sm:inline">SURVEY</span>

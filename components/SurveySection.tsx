@@ -15,7 +15,7 @@ const SurveySection = () => {
           <div className="absolute bottom-2 left-2 w-4 h-4 border-b-2 border-l-2 border-gold/50" />
           <div className="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-gold/50" />
 
-          <span className="font-display text-[7px] tracking-[0.4em] text-gold/70">
+          <span className="font-display text-[12px] tracking-[0.4em] text-gold/70">
             ═══ A QUEST FOR YOU ═══
           </span>
           <h2 className="font-display text-sm sm:text-base md:text-lg text-foreground mt-6 mb-4 leading-loose">
@@ -25,7 +25,7 @@ const SurveySection = () => {
             We're rolling out our thesis survey and need brave souls to answer! Play the game and
             share your feedback to help us complete our research.
           </p>
-          <p className="text-gold font-display text-[8px] tracking-wider mb-8 leading-loose">
+          <p className="text-gold font-display text-[13px] tracking-wider mb-8 leading-loose">
             🎁 4 WINNERS GET ₱100 GCASH +<br />EXCLUSIVE PHYSICAL CARD SOUVENIR
           </p>
 
@@ -33,7 +33,7 @@ const SurveySection = () => {
             href={SURVEY_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 font-display tracking-[0.15em] text-[9px] px-10 py-4 gradient-gold text-primary-foreground hover:opacity-90 transition-all duration-300 glow-gold pixel-border"
+            className="inline-flex items-center gap-3 font-display tracking-[0.15em] text-[14px] px-10 py-4 gradient-gold text-primary-foreground hover:opacity-90 transition-all duration-300 glow-gold pixel-border"
           >
             ▶ TAKE THE SURVEY
             <ExternalLink className="w-3 h-3" />
