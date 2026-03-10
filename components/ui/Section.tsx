@@ -9,7 +9,7 @@ interface SectionProps {
 
 const Section: React.FC<SectionProps> = ({ id, children, className = '' }) => {
   return (
-    <section id={id} className={`py-20 md:py-28 px-6 ${className}`}>
+    <section id={id} data-reveal className={`relative py-20 md:py-28 px-6 ${className}`}>
       <div className="max-w-4xl mx-auto">
         {children}
       </div>
