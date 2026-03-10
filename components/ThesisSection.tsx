@@ -1,44 +1,150 @@
 
-import React from 'react';
-import Section from './ui/Section';
-import SectionTitle from './ui/SectionTitle';
+import { motion } from "framer-motion";
+import { useState } from "react";
+import SectionWrapper from "./SectionWrapper";
+import SectionTitle from "./SectionTitle";
 
-const ThesisSection: React.FC = () => {
+const PILLARS = [
+  {
+    num: "01",
+    title: "CULTURAL PRESERVATION",
+    subtitle: "Interactive Mythology Museum",
+    icon: "📜",
+    goal: "To design a game as a medium for cultural preservation and education, revitalizing indigenous narratives for a modern audience.",
+    impl: "Extensive research, cultural expert consultation, and careful translation of mythological themes into design, art, and narrative.",
+    highlights: ["Filipino Mythology", "Cultural Education", "Heritage Revival"],
+    color: "border-l-amber-500/60",
+  },
+  {
+    num: "02",
+    title: "DYNAMIC DIFFICULTY",
+    subtitle: "Rule-Based Adaptive System",
+    icon: "📊",
+    goal: "How can a rule-based adaptive difficulty system maintain a state of 'flow' for players of varying skill levels?",
+    impl: "A transparent, rule-based approach driven by a Player Performance Score (PPS) from eight weighted performance factors mapping to difficulty tiers.",
+    highlights: ["Player Flow", "8 Performance Factors", "Adaptive Tiers"],
+    color: "border-l-cyan-500/60",
+  },
+  {
+    num: "03",
+    title: "PROCEDURAL GENERATION",
+    subtitle: "Delaunay-Inspired Framework",
+    icon: "🔬",
+    goal: "To ensure high replayability through novel PCG for overworld maps using graph-based corridor generation.",
+    impl: "A seven-stage pipeline using Delaunay triangulation and A* pathfinding, validated against connectivity, dead-end ratio, and generation time.",
+    highlights: ["7-Stage Pipeline", "Delaunay + A*", "Infinite Replayability"],
+    color: "border-l-emerald-500/60",
+  },
+];
+
+const ThesisSection = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const active = PILLARS[activeIndex];
+
   return (
-    <Section id="thesis" className="bg-[#1a1315]">
-      <SectionTitle>CORE RESEARCH</SectionTitle>
-      <div className="space-y-10 text-lg leading-relaxed">
-        <p>The development of <em>Bathala</em> is grounded in three core research pillars that collectively address challenges in game design, player engagement, and cultural heritage.</p>
-        
-        <div>
-          <h3 className="font-dungeon text-3xl mb-4 uppercase">1. Cultural Preservation through Interactive Media</h3>
-          <p className="mb-4">A primary objective is to demonstrate the viability of digital games as "interactive mythology museums." The project addresses the underrepresentation of Filipino folklore in gaming by developing a system to authentically integrate cultural narratives into game mechanics.</p>
-          <ul className="list-disc list-inside space-y-2 pl-4 text-base">
-            <li><strong className="text-[#77888C]">Research Goal:</strong> To design a game as a medium for cultural preservation and education, revitalizing indigenous narratives for a modern audience.</li>
-            <li><strong className="text-[#77888C]">Implementation:</strong> Achieved through extensive research, consultation with cultural experts, and the careful translation of mythological themes into the game's design, art, and narrative.</li>
-          </ul>
+    <SectionWrapper id="thesis" className="gradient-section">
+      <div className="container mx-auto max-w-5xl">
+        <SectionTitle
+          title="CORE RESEARCH"
+          subtitle="Three pillars addressing game design, engagement, and cultural heritage"
+        />
+
+        {/* Tab-style pillar selector */}
+        <div className="flex flex-col md:flex-row gap-3 mb-8">
+          {PILLARS.map((p, i) => (
+            <button
+              key={p.num}
+              onClick={() => setActiveIndex(i)}
+              className={`flex-1 text-left p-5 border transition-all duration-300 pixel-border ${
+                activeIndex === i
+                  ? "border-gold/40 bg-gold/5"
+                  : "border-gold/10 bg-card/30 hover:border-gold/20"
+              }`}
+            >
+              <div className="flex items-center gap-3">
+                <span className="text-xl">{p.icon}</span>
+                <div>
+                  <span className="font-display text-[6px] tracking-wider text-gold/50 block">
+                    PILLAR {p.num}
+                  </span>
+                  <span
+                    className={`font-display text-[8px] tracking-wider transition-colors ${
+                      activeIndex === i ? "text-gold" : "text-foreground"
+                    }`}
+                  >
+                    {p.title}
+                  </span>
+                </div>
+              </div>
+            </button>
+          ))}
         </div>
 
-        <div>
-          <h3 className="font-dungeon text-3xl mb-4 uppercase">2. A Rule-Based Dynamic Difficulty Adjustment (DDA) System</h3>
-          <p className="mb-4">The central technical contribution is a transparent, rule-based DDA system designed to maintain player "flow," addressing the research question: "How can a rule-based adaptive difficulty system be designed to maintain a state of 'flow' for players of varying skill levels?"</p>
-           <ul className="list-disc list-inside space-y-2 pl-4 text-base">
-            <li><strong className="text-[#77888C]">Methodology:</strong> We chose a rule-based approach for its transparency and reproducibility. The system is driven by a Player Performance Score (PPS) calculated from eight distinct, weighted performance factors.</li>
-            <li><strong className="text-[#77888C]">Implementation:</strong> The PPS score maps to difficulty tiers that dynamically adjust gameplay experience, ensuring a fair but engaging challenge.</li>
-          </ul>
-        </div>
+        {/* Active pillar detail */}
+        <motion.div
+          key={activeIndex}
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          className={`bg-card/50 border border-gold/15 p-8 md:p-10 pixel-border border-l-4 ${active.color}`}
+        >
+          <div className="flex flex-col md:flex-row gap-8">
+            {/* Left — main content */}
+            <div className="flex-1">
+              <div className="flex items-center gap-3 mb-2">
+                <span className="text-2xl">{active.icon}</span>
+                <div>
+                  <h3 className="font-display text-[10px] md:text-xs text-foreground tracking-wider leading-loose">
+                    {active.title}
+                  </h3>
+                  <p className="font-display text-[7px] text-gold/50 tracking-wider">
+                    {active.subtitle}
+                  </p>
+                </div>
+              </div>
 
-        <div>
-          <h3 className="font-dungeon text-3xl mb-4 uppercase">3. A Delaunay-Inspired Procedural Content Generation (PCG) Framework</h3>
-          <p className="mb-4">To ensure high replayability, we designed a novel PCG system for overworld map generation, implementing a graph-based corridor generation system that creates coherent and navigable levels.</p>
-           <ul className="list-disc list-inside space-y-2 pl-4 text-base">
-            <li><strong className="text-[#77888C]">Methodology:</strong> The system uses a seven-stage pipeline inspired by Delaunay triangulation and A* pathfinding.</li>
-            <li><strong className="text-[#77888C]">Validation:</strong> The system's effectiveness is measured against clear metrics, including high connectivity ratio, low dead-end ratio, and fast generation time.</li>
-          </ul>
-        </div>
+              <div className="space-y-5 mt-6 font-body">
+                <div>
+                  <span className="font-display text-[7px] tracking-[0.2em] text-gold block mb-2">
+                    ◆ RESEARCH GOAL
+                  </span>
+                  <p className="text-foreground leading-relaxed text-base">
+                    {active.goal}
+                  </p>
+                </div>
+                <div>
+                  <span className="font-display text-[7px] tracking-[0.2em] text-gold block mb-2">
+                    ◆ METHODOLOGY
+                  </span>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {active.impl}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Right — key terms */}
+            <div className="md:w-48 flex flex-row md:flex-col gap-2">
+              <span className="font-display text-[6px] tracking-[0.3em] text-gold/40 mb-1 hidden md:block">
+                KEY AREAS
+              </span>
+              {active.highlights.map((h) => (
+                <div
+                  key={h}
+                  className="px-3 py-2 bg-gold/5 border border-gold/15 text-center"
+                >
+                  <span className="font-display text-[6px] tracking-wider text-gold/70">
+                    {h.toUpperCase()}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
       </div>
-    </Section>
+    </SectionWrapper>
   );
 };
 
 export default ThesisSection;
+

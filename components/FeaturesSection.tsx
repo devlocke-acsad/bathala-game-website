@@ -1,47 +1,129 @@
-import React from 'react';
-import Section from './ui/Section';
-import SectionTitle from './ui/SectionTitle';
+import { motion } from 'framer-motion';
+import { useState } from 'react';
+import SectionWrapper from './SectionWrapper';
+import SectionTitle from './SectionTitle';
 
-const FeatureCard = ({ title, children }: { title: string, children: React.ReactNode }) => (
-  <div className="border border-[#77888C]/30 p-6">
-    <h4 className="font-dungeon text-2xl mb-3 text-[#77888C] uppercase">{title}</h4>
-    <p className="leading-relaxed">{children}</p>
-  </div>
-);
+const FEATURES = [
+  {
+    title: 'POKER COMBAT',
+    desc: 'Combat is intuitive yet deep. Form poker hands — a Pair might be a simple jab, but a Full House or Straight Flush can unleash devastating power. Strategy is key.',
+    icon: '🃏',
+    detail: '5-card poker hands determine attack strength. Higher hands = more damage + special effects.',
+    stat: '52',
+    statLabel: 'CARDS IN DECK',
+  },
+  {
+    title: 'ELEMENTAL SUITS',
+    desc: 'Apoy (Fire), Tubig (Water), Lupa (Earth), and Hangin (Air), each with unique tactical advantages in combat.',
+    icon: '🔥',
+    detail: 'Each element has strengths and weaknesses. Build your deck around elemental synergies.',
+    stat: '4',
+    statLabel: 'ELEMENTS',
+  },
+  {
+    title: 'DYNAMIC DIFFICULTY',
+    desc: 'A system that learns how you play, subtly adjusting enemy strength and resources to keep you in a state of flow.',
+    icon: '⚖️',
+    detail: 'Player Performance Score (PPS) tracks 8 factors in real-time to calibrate the challenge.',
+    stat: '8',
+    statLabel: 'TRACKED FACTORS',
+  },
+  {
+    title: 'PROCEDURAL GEN',
+    desc: 'No two journeys are the same. A sophisticated system creates a unique overworld map for every run.',
+    icon: '🗺️',
+    detail: 'Delaunay triangulation + A* pathfinding create coherent, explorable maps every time.',
+    stat: '∞',
+    statLabel: 'UNIQUE MAPS',
+  },
+  {
+    title: 'THE LANDAS SYSTEM',
+    desc: 'Slay or Spare after each battle. Your alignment shapes your narrative journey and endings.',
+    icon: '⚔️',
+    detail: 'Three paths: Conquest, Balance, or Mercy — each unlocking unique story outcomes.',
+    stat: '3',
+    statLabel: 'PATHS',
+  },
+  {
+    title: 'RELICS & POTIONS',
+    desc: 'Equip up to six Agimat (Relics) — powerful passive items that fundamentally change your run.',
+    icon: '💎',
+    detail: 'Discover rare relics at shops and after bosses. Single-use potions for clutch moments.',
+    stat: '6',
+    statLabel: 'RELIC SLOTS',
+  },
+];
 
-const FeaturesSection: React.FC = () => {
+const FeaturesSection = () => {
+  const [expanded, setExpanded] = useState<number | null>(null);
+
   return (
-    <Section id="features">
-      <SectionTitle>KEY FEATURES</SectionTitle>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* FIX: Wrapped content inside FeatureCard to pass it as children prop. */}
-        <FeatureCard title="Strategic Poker-Based Combat">
-          Combat in <em>Bathala</em> is intuitive yet deep. You don't just play cards; you form poker hands. A <strong>Pair</strong> might be a simple jab, but a <strong>Full House</strong> or a <strong>Straight Flush</strong> can unleash devastating power. Strategy is key as you decide whether to play a safe hand now or hold out for a game-changing combination.
-        </FeatureCard>
-        {/* FIX: Wrapped content inside FeatureCard to pass it as children prop. */}
-        <FeatureCard title="The Four Elemental Suits">
-          The standard card suits are replaced with four elemental forces from Filipino folklore:
-          <strong>Apoy (Fire)</strong>, <strong>Tubig (Water)</strong>, <strong>Lupa (Earth)</strong>, and <strong>Hangin (Air)</strong>, each with unique tactical advantages.
-        </FeatureCard>
-        {/* FIX: Wrapped content inside FeatureCard to pass it as children prop. */}
-        <FeatureCard title="A Challenge That Adapts to You (DDA)">
-          <em>Bathala</em> features a Dynamic Difficulty Adjustment system that learns from how you play. It subtly adjusts enemy strength and resource availability to ensure the challenge is always fair and engaging, keeping you in a state of "flow".
-        </FeatureCard>
-        {/* FIX: Wrapped content inside FeatureCard to pass it as children prop. */}
-        <FeatureCard title="Endless Worlds with Procedural Generation (PCG)">
-          No two journeys are the same. <em>Bathala</em> uses a sophisticated procedural generation system to create a unique overworld map for every run, ensuring infinite replayability and strategic variety.
-        </FeatureCard>
-        {/* FIX: Wrapped content inside FeatureCard to pass it as children prop. */}
-        <FeatureCard title="The Landás System: A Narrative Choice">
-          After each battle, choose to <strong>Slay</strong> for material gain or <strong>Spare</strong> for mercy. Your alignment—Conquest, Balance, or Mercy—is independent of difficulty and purely shapes your narrative journey, influencing story outcomes and your ultimate ending.
-        </FeatureCard>
-        {/* FIX: Wrapped content inside FeatureCard to pass it as children prop. */}
-        <FeatureCard title="Powerful Relics & Potions">
-          Discover and equip up to six <strong>Agimat (Relics)</strong>—powerful passive items that fundamentally change your run. Use single-use potions for a timely heal, a defensive boost, or to inflict elemental damage.
-        </FeatureCard>
+    <SectionWrapper id="features">
+      <div className="container mx-auto max-w-5xl">
+        <SectionTitle title="KEY FEATURES" />
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {FEATURES.map((feat, i) => (
+            <motion.div
+              key={feat.title}
+              className="relative bg-secondary/20 border border-gold/10 overflow-hidden pixel-border hover:border-gold/30 transition-all duration-300 group cursor-pointer"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              onClick={() => setExpanded(expanded === i ? null : i)}
+            >
+              <div className="h-[2px] w-full gradient-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+              <div className="p-7">
+                <div className="flex items-start justify-between mb-4">
+                  <span className="text-2xl">{feat.icon}</span>
+                  <div className="text-right">
+                    <span className="font-display text-lg text-gold/30 leading-none block">
+                      {feat.stat}
+                    </span>
+                    <span className="font-display text-[5px] tracking-wider text-gold/40">
+                      {feat.statLabel}
+                    </span>
+                  </div>
+                </div>
+
+                <h3 className="font-display text-[8px] tracking-wider text-foreground mb-3 group-hover:text-gold transition-colors leading-loose">
+                  {feat.title}
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed font-body">
+                  {feat.desc}
+                </p>
+
+                <motion.div
+                  initial={false}
+                  animate={{
+                    height: expanded === i ? 'auto' : 0,
+                    opacity: expanded === i ? 1 : 0,
+                  }}
+                  transition={{ duration: 0.3 }}
+                  className="overflow-hidden"
+                >
+                  <div className="pt-4 mt-4 border-t border-gold/10">
+                    <p className="font-display text-[6px] tracking-wider text-gold/50 mb-1">
+                      ▸ HOW IT WORKS
+                    </p>
+                    <p className="text-muted-foreground text-xs leading-relaxed font-body">
+                      {feat.detail}
+                    </p>
+                  </div>
+                </motion.div>
+
+                <div className="mt-3 font-display text-[5px] tracking-wider text-gold/30 group-hover:text-gold/60 transition-colors">
+                  {expanded === i ? '▲ COLLAPSE' : '▼ TAP FOR DETAILS'}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
-    </Section>
+    </SectionWrapper>
   );
 };
 
 export default FeaturesSection;
+

@@ -5,46 +5,214 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'PixeledEnglishFont';
-  src: url('/assets/fonts/PixeledEnglishFont.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 6%;
+    --foreground: 40 20% 85%;
+
+    --card: 0 0% 9%;
+    --card-foreground: 40 20% 85%;
+
+    --popover: 0 0% 9%;
+    --popover-foreground: 40 20% 85%;
+
+    --primary: 40 80% 55%;
+    --primary-foreground: 0 0% 6%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 40 20% 85%;
+
+    --muted: 0 0% 14%;
+    --muted-foreground: 40 10% 55%;
+
+    --accent: 40 80% 55%;
+    --accent-foreground: 0 0% 6%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 40 15% 20%;
+    --input: 0 0% 15%;
+    --ring: 40 80% 55%;
+
+    --radius: 0.5rem;
+
+    --gold: 40 80% 55%;
+    --gold-light: 43 90% 65%;
+    --gold-dark: 35 70% 40%;
+    --ember: 15 80% 50%;
+    --blood: 0 60% 25%;
+    --parchment: 40 30% 90%;
+    --parchment-dark: 35 20% 15%;
+  }
 }
 
-@font-face {
-  font-family: 'Satoshi';
-  src: url('/assets/fonts/Satoshi-Regular.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Crimson Text', serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'dungeon-mode', monospace;
+  }
 }
 
-@font-face {
-  font-family: 'Satoshi';
-  src: url('/assets/fonts/Satoshi-Medium.otf') format('opentype');
-  font-weight: 500;
-  font-style: normal;
+@layer utilities {
+  .font-display {
+    font-family: 'dungeon-mode', monospace;
+  }
+
+  .font-body {
+    font-family: 'Crimson Text', serif;
+  }
+
+  .text-gold {
+    color: hsl(var(--gold));
+  }
+
+  .text-gold-light {
+    color: hsl(var(--gold-light));
+  }
+
+  .bg-gold {
+    background-color: hsl(var(--gold));
+  }
+
+  .bg-gold-dark {
+    background-color: hsl(var(--gold-dark));
+  }
+
+  .border-gold {
+    border-color: hsl(var(--gold) / 0.3);
+  }
+
+  .bg-parchment {
+    background-color: hsl(var(--parchment));
+  }
+
+  .bg-parchment-dark {
+    background-color: hsl(var(--parchment-dark));
+  }
+
+  .text-parchment {
+    color: hsl(var(--parchment));
+  }
+
+  .bg-ember {
+    background-color: hsl(var(--ember));
+  }
+
+  .gradient-gold {
+    background: linear-gradient(135deg, hsl(var(--gold-dark)), hsl(var(--gold)), hsl(var(--gold-light)));
+  }
+
+  .gradient-dark {
+    background: linear-gradient(180deg, hsl(0 0% 4%), hsl(0 0% 8%));
+  }
+
+  .gradient-section {
+    background: linear-gradient(180deg, hsl(0 0% 6%), hsl(0 0% 9%), hsl(0 0% 6%));
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 20px hsl(var(--gold) / 0.3), 0 0 60px hsl(var(--gold) / 0.1);
+  }
+
+  .text-shadow-gold {
+    text-shadow: 0 0 30px hsl(var(--gold) / 0.5);
+  }
+
+  /* Pixel art style divider */
+  .pixel-divider {
+    @apply flex items-center justify-center gap-4 my-6;
+  }
+
+  .pixel-divider::before,
+  .pixel-divider::after {
+    content: '';
+    @apply h-[2px] flex-1;
+    background: repeating-linear-gradient(90deg,
+        hsl(var(--gold) / 0.4) 0px,
+        hsl(var(--gold) / 0.4) 4px,
+        transparent 4px,
+        transparent 8px);
+  }
+
+  /* Pixel border for cards */
+  .pixel-border {
+    box-shadow:
+      inset 2px 2px 0 hsl(var(--gold) / 0.15),
+      inset -2px -2px 0 hsl(var(--gold) / 0.08),
+      2px 2px 0 hsl(0 0% 0% / 0.3);
+  }
+
+  /* Scanline overlay for retro CRT feel */
+  .scanlines {
+    position: relative;
+  }
+
+  .scanlines::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(0deg,
+        transparent 0px,
+        transparent 2px,
+        hsl(0 0% 0% / 0.06) 2px,
+        hsl(0 0% 0% / 0.06) 4px);
+    z-index: 5;
+  }
+
+  /* Vignette effect */
+  .vignette::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(ellipse at center, transparent 50%, hsl(0 0% 0% / 0.5) 100%);
+    z-index: 4;
+  }
 }
 
-@font-face {
-  font-family: 'Satoshi';
-  src: url('/assets/fonts/Satoshi-Bold.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-body {
-  font-family: 'Satoshi', sans-serif;
+::-webkit-scrollbar-track {
+  background: hsl(0 0% 6%);
 }
 
-.font-dungeon {
-  font-family: 'dungeon-mode', monospace;
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--gold) / 0.3);
+  border-radius: 0;
 }
 
-.font-pixel {
-  font-family: 'PixeledEnglishFont', monospace;
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--gold) / 0.5);
 }
 
-.font-satoshi {
-  font-family: 'Satoshi', sans-serif;
+/* Selection */
+::selection {
+  background: hsl(var(--gold) / 0.3);
+  color: hsl(var(--parchment));
 }

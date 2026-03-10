@@ -1,19 +1,99 @@
 
-import React from 'react';
+import { ExternalLink } from "lucide-react";
 
-const Footer: React.FC = () => {
+const SURVEY_URL = "https://forms.gle/frDmbAeJljAgKCqJ6";
+
+const Footer = () => {
   return (
-    <footer className="bg-[#150E10] border-t border-[#77888C]/20 py-12 px-6">
-      <div className="max-w-4xl mx-auto text-center">
-        <div className="flex justify-center items-center space-x-6 mb-6">
-          <a href="https://devlockestudios.itch.io/" className="font-dungeon text-lg text-[#77888C] hover:text-[#9CA3AF] uppercase">Itch.io</a>
-          <a href="https://github.com/devlocke-acsad" className="font-dungeon text-lg text-[#77888C] hover:text-[#9CA3AF] uppercase">GitHub</a>
+    <footer className="border-t border-gold/10 bg-card/50 py-16 px-4">
+      <div className="container mx-auto max-w-5xl">
+        <div className="grid md:grid-cols-4 gap-10 mb-12">
+          {/* Brand */}
+          <div className="md:col-span-1">
+            <h3 className="font-display text-[10px] text-gold mb-3 leading-loose">BATHALA</h3>
+            <p className="text-muted-foreground text-sm leading-relaxed font-body">
+              Mend the Shattered Balance. A Filipino mythology-inspired roguelike card game.
+            </p>
+          </div>
+
+          {/* Links */}
+          <div>
+            <h4 className="font-display text-[7px] tracking-[0.2em] text-foreground mb-4 leading-loose">
+              LINKS
+            </h4>
+            <div className="space-y-2 font-body">
+              {[
+                { label: "Play Bathala", href: "https://play.bathala.quest/" },
+                { label: "Itch.io Page", href: "https://devlocke.itch.io/bathala" },
+                { label: "GitHub", href: "https://github.com/Devlocke-Studios" },
+              ].map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-muted-foreground text-sm hover:text-gold transition-colors"
+                >
+                  {link.label}
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Social */}
+          <div>
+            <h4 className="font-display text-[7px] tracking-[0.2em] text-foreground mb-4 leading-loose">
+              SOCIAL
+            </h4>
+            <div className="space-y-2 font-body">
+              <a
+                href="https://www.facebook.com/playbathala"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-muted-foreground text-sm hover:text-gold transition-colors"
+              >
+                Facebook
+                <ExternalLink className="w-3 h-3" />
+              </a>
+            </div>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className="font-display text-[7px] tracking-[0.2em] text-foreground mb-4 leading-loose">
+              CONTACT
+            </h4>
+            <a
+              href="mailto:devlockestudios@gmail.com"
+              className="text-muted-foreground text-sm hover:text-gold transition-colors font-body"
+            >
+              devlockestudios@gmail.com
+            </a>
+            <p className="text-muted-foreground/60 text-xs mt-4 leading-relaxed font-body">
+              University of Makati<br />
+              BS Computer Science Thesis 2025
+            </p>
+          </div>
         </div>
-        <p className="mb-2">Contact: devlockestudios@proton.me</p>
-        <p className="text-sm">&copy; 2025 Devlocke Studios</p>
+
+        <div className="border-t border-gold/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-muted-foreground/60 text-[7px] font-display tracking-wider">
+            © 2025 DEVLOCKE STUDIOS
+          </p>
+          <a
+            href={SURVEY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-display text-[7px] tracking-wider text-gold hover:text-gold transition-colors"
+          >
+            📋 TAKE OUR THESIS SURVEY
+          </a>
+        </div>
       </div>
     </footer>
   );
 };
 
 export default Footer;
+
