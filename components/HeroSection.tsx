@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import { Trophy, GraduationCap } from '@phosphor-icons/react';
 import heroBg from '@/assets/images/hero-bg.jpg';
 import Typewriter from './Typewriter';
 
@@ -54,12 +55,12 @@ const HeroSection = () => {
         style={{ opacity: contentOpacity }}
       >
         <motion.h1
-          className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-foreground mb-6 text-shadow-gold leading-relaxed"
+          className="font-pixel text-[7rem] sm:text-[9rem] md:text-[11rem] lg:text-[14rem] text-foreground mb-6 text-shadow-gold leading-none tracking-tight lowercase"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
         >
-          BATHALA
+          bathala
         </motion.h1>
 
         <motion.div
@@ -92,7 +93,7 @@ const HeroSection = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 3.5 }}
         >
-          🏆 GDAP GameOn 2025 Finalist · 🎓 UMak CS Thesis
+          <Trophy size={13} weight="fill" className="inline mb-0.5" /> GDAP GameOn 2025 Finalist · <GraduationCap size={13} weight="fill" className="inline mb-0.5" /> UMak CS Thesis
         </motion.p>
 
         <motion.div

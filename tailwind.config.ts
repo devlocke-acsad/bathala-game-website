@@ -18,6 +18,7 @@ export default {
     extend: {
       fontFamily: {
         display: ['"dungeon-mode"', "monospace"],
+        pixel: ['"pixeled"', "monospace"],
         body: ['"Crimson Text"', "serif"],
       },
       colors: {

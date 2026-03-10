@@ -26,7 +26,7 @@ const SurveySection = () => {
             share your feedback to help us complete our research.
           </p>
           <p className="text-gold font-display text-[13px] tracking-wider mb-8 leading-loose">
-            🎁 4 WINNERS GET ₱100 GCASH +<br />EXCLUSIVE PHYSICAL CARD SOUVENIR
+            4 WINNERS GET 100 PHP GCASH +<br />EXCLUSIVE PHYSICAL CARD SOUVENIR
           </p>
 
           <a
@@ -36,7 +36,6 @@ const SurveySection = () => {
             className="inline-flex items-center gap-3 font-display tracking-[0.15em] text-[14px] px-10 py-4 gradient-gold text-primary-foreground hover:opacity-90 transition-all duration-300 glow-gold pixel-border"
           >
             ▶ TAKE THE SURVEY
-            <ExternalLink className="w-3 h-3" />
           </a>
         </div>
       </div>

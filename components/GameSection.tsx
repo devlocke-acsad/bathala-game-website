@@ -1,3 +1,4 @@
+import { Spade, Diamond, Club } from '@phosphor-icons/react';
 import SectionWrapper from './SectionWrapper';
 import SectionTitle from './SectionTitle';
 
@@ -33,26 +34,29 @@ const GameSection = () => {
               {
                 title: 'BUILD YOUR HAND',
                 desc: 'Draw from a 52-card deck and form powerful poker hands to attack, defend, and unleash special abilities.',
-                icon: '♠',
+                icon: Spade,
               },
               {
                 title: 'SCULPT YOUR DECK',
                 desc: 'Purify (remove), Attune (upgrade), and Infuse (add) cards, strategically shaping your deck to suit your playstyle.',
-                icon: '♦',
+                icon: Diamond,
               },
               {
                 title: 'SURVIVE THE CYCLE',
                 desc: 'Journey through a world that shifts between day and night. Survive five full cycles to confront the chapter\'s final boss.',
-                icon: '♣',
+                icon: Club,
               },
-            ].map((item) => (
+            ].map((item) => {
+              const ItemIcon = item.icon;
+              return (
               <div key={item.title} className="border-l-2 border-gold/30 pl-6">
-                <h4 className="font-display text-[13px] tracking-wider text-gold mb-2 leading-loose">
-                  <span className="mr-2">{item.icon}</span>{item.title}
+                <h4 className="font-display text-[13px] tracking-wider text-gold mb-2 leading-loose flex items-center gap-2">
+                  <ItemIcon size={14} />{item.title}
                 </h4>
                 <p className="text-muted-foreground leading-relaxed font-body">{item.desc}</p>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
 

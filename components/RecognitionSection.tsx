@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
+import { Trophy } from '@phosphor-icons/react';
 import SectionWrapper from './SectionWrapper';
 import SectionTitle from './SectionTitle';
-import awardBadge from '@/assets/images/award-badge.png';
 
 const RecognitionSection = () => {
   return (
@@ -9,15 +9,15 @@ const RecognitionSection = () => {
       <div className="container mx-auto max-w-4xl">
         <SectionTitle title="RECOGNIZED AT GDAP 2025" />
         <div className="flex flex-col md:flex-row items-center gap-10">
-          <motion.img
-            src={awardBadge}
-            alt="GDAP GameOn 2025 Award Badge"
-            className="w-36 h-36 md:w-44 md:h-44 object-contain animate-float drop-shadow-[0_0_30px_hsl(40_80%_55%/0.4)]"
+          <motion.div
+            className="w-36 h-36 md:w-44 md:h-44 flex items-center justify-center animate-float drop-shadow-[0_0_30px_hsl(40_80%_55%/0.4)] text-gold"
             initial={{ scale: 0.8, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-          />
+          >
+            <Trophy size={120} weight="fill" />
+          </motion.div>
           <div className="flex-1 text-center md:text-left">
             <h3 className="font-display text-xs md:text-sm text-gold tracking-wider mb-4 leading-loose">
               AWARD-WINNING GAME

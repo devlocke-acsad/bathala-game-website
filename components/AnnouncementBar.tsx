@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { X } from 'lucide-react';
+import { Trophy } from '@phosphor-icons/react';
 
 const AnnouncementBar = () => {
   const [visible, setVisible] = useState(true);
@@ -9,8 +10,8 @@ const AnnouncementBar = () => {
   return (
     <div className="relative z-50 gradient-gold py-2.5 px-4">
       <div className="container mx-auto flex items-center justify-center gap-2">
-        <span className="text-center text-[13px] sm:text-[14px] font-display tracking-wider text-primary-foreground leading-relaxed">
-          🏆 GDAP GAMEON 2025 FINALIST — BEST NARRATIVE & BEST AUDIO NOMINEE
+        <span className="text-center text-[13px] sm:text-[14px] font-display tracking-wider text-primary-foreground leading-relaxed flex items-center justify-center gap-2">
+          <Trophy size={14} weight="fill" /> GDAP GAMEON 2025 FINALIST — BEST NARRATIVE & BEST AUDIO NOMINEE
         </span>
         <button
           onClick={() => setVisible(false)}

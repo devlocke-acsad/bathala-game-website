@@ -5,6 +5,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'pixeled';
+  src: url('/assets/fonts/PixeledEnglishFont.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -137,7 +144,7 @@
   }
 
   .text-shadow-gold {
-    text-shadow: 0 0 30px hsl(var(--gold) / 0.5);
+    text-shadow: 0 0 40px hsl(var(--gold) / 0.2), 0 0 10px hsl(var(--gold) / 0.1);
   }
 
   /* Pixel art style divider */
