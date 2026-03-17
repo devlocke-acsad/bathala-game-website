@@ -2,7 +2,7 @@
 import { ExternalLink } from 'lucide-react';
 import SectionWrapper from './SectionWrapper';
 
-const SURVEY_URL = 'https://forms.gle/frDmbAeJljAgKCqJ6';
+const SURVEY_URL = 'https://forms.gle/TEJwaNaa2DR1ztmaA';
 
 const SurveySection = () => {
   return (

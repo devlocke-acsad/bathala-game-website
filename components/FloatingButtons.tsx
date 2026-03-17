@@ -1,6 +1,6 @@
 import { ClipboardList } from 'lucide-react';
 
-const SURVEY_URL = 'https://forms.gle/frDmbAeJljAgKCqJ6';
+const SURVEY_URL = 'https://forms.gle/TEJwaNaa2DR1ztmaA';
 
 const FloatingButtons = () => {
   return (

@@ -1,7 +1,7 @@
 
 import { ExternalLink } from "lucide-react";
 
-const SURVEY_URL = "https://forms.gle/frDmbAeJljAgKCqJ6";
+const SURVEY_URL = "https://forms.gle/TEJwaNaa2DR1ztmaA";
 
 const Footer = () => {
   return (
@@ -24,7 +24,6 @@ const Footer = () => {
             <div className="space-y-2 font-body">
               {[
                 { label: "Play Bathala", href: "https://play.bathala.quest/" },
-                { label: "Itch.io Page", href: "https://devlocke.itch.io/bathala" },
                 { label: "GitHub", href: "https://github.com/Devlocke-Studios" },
               ].map((link) => (
                 <a
@@ -65,10 +64,10 @@ const Footer = () => {
               CONTACT
             </h4>
             <a
-              href="mailto:devlockestudios@gmail.com"
+              href="mailto:devlockestudios@proton.me"
               className="text-muted-foreground text-sm hover:text-gold transition-colors font-body"
             >
-              devlockestudios@gmail.com
+              devlockestudios@proton.me
             </a>
             <p className="text-muted-foreground/60 text-xs mt-4 leading-relaxed font-body">
               University of Makati<br />

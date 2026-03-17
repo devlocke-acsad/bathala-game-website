@@ -1,17 +1,23 @@
 
 import SectionWrapper from "./SectionWrapper";
 import SectionTitle from "./SectionTitle";
-import avatarAdizon from "@/assets/images/avatar-adizon.png";
-import avatarCabus from "@/assets/images/avatar-cabus.png";
-import avatarMagtajas from "@/assets/images/avatar-magtajas.png";
-import avatarOlimberio from "@/assets/images/avatar-olimberio.png";
 
 const TEAM = [
-  { name: "Adizon, Exequel", role: "Developer", avatar: avatarAdizon },
-  { name: "Cabus, Clement Harold Miguel", role: "Developer", avatar: avatarCabus },
-  { name: "Magtajas, Chester", role: "Developer", avatar: avatarMagtajas },
-  { name: "Olimberio, David Christian", role: "Developer", avatar: avatarOlimberio },
+  { name: "Adizon, Exequel", role: "Developer" },
+  { name: "Cabus, Clement Harold Miguel", role: "Developer" },
+  { name: "Magtajas, Chester", role: "Developer" },
+  { name: "Olimberio, David Christian", role: "Developer" },
 ];
+
+const initialsFromName = (name: string) =>
+  name
+    .split(",")[0]
+    .trim()
+    .split(" ")
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0]?.toUpperCase() ?? "")
+    .join("");
 
 const AboutSection = () => {
   return (
@@ -28,26 +34,30 @@ const AboutSection = () => {
           through interactive media.
         </p>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
           {TEAM.map((member) => (
             <div
               key={member.name}
-              className="bg-secondary/30 border border-gold/10 p-6 pixel-border hover:border-gold/25 transition-colors group"
+              className="relative overflow-hidden bg-gradient-to-b from-secondary/55 to-secondary/20 border border-gold/15 p-6 md:p-7 pixel-border transition-all duration-300 hover:border-gold/35 hover:-translate-y-1 group"
             >
-              <div className="w-20 h-20 mx-auto mb-4 border-2 border-gold/20 overflow-hidden bg-secondary/50 group-hover:border-gold/40 transition-colors">
-                <img
-                  src={member.avatar}
-                  alt={`Pixel art portrait of ${member.name}`}
-                  className="w-full h-full object-cover"
-                  style={{ imageRendering: "auto" }}
-                />
+              <div className="absolute -right-10 -top-10 w-24 h-24 rounded-full bg-gold/10 blur-2xl pointer-events-none" />
+
+              <div className="relative">
+                <div className="w-12 h-12 mb-5 border border-gold/35 bg-background/40 text-gold flex items-center justify-center font-display text-sm tracking-[0.2em]">
+                  {initialsFromName(member.name)}
+                </div>
+
+                <p className="font-display text-[12px] md:text-[13px] tracking-[0.12em] text-foreground leading-loose min-h-[64px]">
+                  {member.name}
+                </p>
+
+                <div className="mt-4 pt-3 border-t border-gold/15 flex items-center justify-between">
+                  <span className="font-display text-[10px] tracking-[0.2em] text-gold/70">
+                    {member.role}
+                  </span>
+                  <span className="w-2 h-2 rounded-full bg-gold/60 shadow-[0_0_10px_rgba(212,168,68,0.55)]" />
+                </div>
               </div>
-              <p className="font-display text-[12px] tracking-wider text-foreground leading-loose">
-                {member.name}
-              </p>
-              <p className="font-display text-[11px] tracking-wider text-gold/50 mt-1">
-                {member.role}
-              </p>
             </div>
           ))}
         </div>

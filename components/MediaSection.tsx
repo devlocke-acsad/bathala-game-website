@@ -87,15 +87,15 @@ const MediaSection = () => {
           subtitle="Screenshots, gameplay footage, and more from the world of Bathala"
         />
 
-        {/* Itch.io embed — featured */}
+        {/* Featured playable embed */}
         <div className="mb-12">
           <div className="relative group">
             <div className="absolute -inset-[1px] gradient-gold opacity-20 group-hover:opacity-30 transition-opacity blur-sm" />
             <div className="relative w-full aspect-video border-2 border-gold/30 overflow-hidden bg-background pixel-border">
               <iframe
-                src="https://itch.io/embed/3267592?border_width=0&bg_color=0f0f0f&fg_color=d4a844&link_color=d4a844&border_color=0f0f0f"
+                src="https://play.bathala.quest/"
                 className="w-full h-full"
-                title="Bathala on Itch.io"
+                title="Play Bathala"
                 allowFullScreen
               />
             </div>
@@ -103,7 +103,7 @@ const MediaSection = () => {
           <div className="flex items-center justify-center gap-3 mt-4">
             <Play className="w-3 h-3 text-gold/60" />
             <p className="font-display text-[12px] tracking-[0.2em] text-gold/60">
-              PLAY BATHALA ON ITCH.IO
+              PLAY BATHALA ON WEB
             </p>
           </div>
         </div>

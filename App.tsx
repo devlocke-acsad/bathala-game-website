@@ -12,7 +12,6 @@ import SurveySection from './components/SurveySection';
 import MediaSection from './components/MediaSection';
 import AboutSection from './components/AboutSection';
 import Footer from './components/Footer';
-import FloatingButtons from './components/FloatingButtons';
 import LoadingScreen from './components/LoadingScreen';
 
 const App = () => {
@@ -36,7 +35,6 @@ const App = () => {
         <MediaSection />
         <AboutSection />
         <Footer />
-        <FloatingButtons />
       </div>
     </>
   );
