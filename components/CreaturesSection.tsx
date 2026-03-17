@@ -48,6 +48,8 @@ interface Creature {
 interface Chapter {
   num: string;
   title: string;
+  realm: string;
+  threat: string;
   imageOverlay: string;
   detailOverlay: string;
   accentBorder: string;
@@ -58,6 +60,8 @@ const CHAPTERS: Chapter[] = [
   {
     num: 'I',
     title: 'The Corrupted Ancestral Forests',
+    realm: 'Verdant Domain',
+    threat: 'Primal Corruption',
     imageOverlay: 'from-emerald-900/80 via-background/60 to-background/95',
     detailOverlay: 'from-emerald-500/20 to-emerald-900/10',
     accentBorder: 'border-emerald-500/30',
@@ -138,6 +142,8 @@ const CHAPTERS: Chapter[] = [
   {
     num: 'II',
     title: 'The Submerged Barangays',
+    realm: 'Drowned Domain',
+    threat: 'Abyssal Surge',
     imageOverlay: 'from-cyan-900/80 via-background/60 to-background/95',
     detailOverlay: 'from-cyan-500/20 to-cyan-900/10',
     accentBorder: 'border-cyan-500/30',
@@ -218,6 +224,8 @@ const CHAPTERS: Chapter[] = [
   {
     num: 'III',
     title: 'The Skyward Citadel',
+    realm: 'Celestial Domain',
+    threat: 'Divine Fracture',
     imageOverlay: 'from-amber-900/80 via-background/60 to-background/95',
     detailOverlay: 'from-amber-500/20 to-amber-900/10',
     accentBorder: 'border-amber-500/30',
@@ -304,6 +312,12 @@ const ELEMENT_COLORS: Record<string, string> = {
   HANGIN: 'bg-amber-500/20 text-amber-400 border-amber-500/30',
 };
 
+const CHAPTER_ACCENTS = [
+  'from-emerald-500/20 via-emerald-500/5 to-transparent',
+  'from-cyan-500/20 via-cyan-500/5 to-transparent',
+  'from-amber-500/20 via-amber-500/5 to-transparent',
+];
+
 const CreaturesSection = () => {
   const [activeChapter, setActiveChapter] = useState(0);
   const [selectedCreature, setSelectedCreature] = useState<Creature | null>(null);
@@ -312,14 +326,21 @@ const CreaturesSection = () => {
   const chapterBoss = chapter.creatures.find((creature) => creature.isBoss) ?? chapter.creatures[0];
 
   return (
-    <SectionWrapper id="creatures" className="gradient-section">
-      <div className="container mx-auto max-w-6xl">
+    <SectionWrapper id="creatures" className="gradient-section relative overflow-hidden">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -top-24 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-gold/10 blur-3xl" />
+        <div className="absolute top-1/4 -left-10 h-56 w-56 rounded-full bg-emerald-500/10 blur-3xl" />
+        <div className="absolute bottom-20 -right-10 h-64 w-64 rounded-full bg-cyan-500/10 blur-3xl" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,hsl(var(--gold)/0.06),transparent_45%),radial-gradient(circle_at_85%_65%,hsl(var(--gold)/0.05),transparent_40%)]" />
+      </div>
+
+      <div className="container mx-auto max-w-6xl relative z-[1]">
         <SectionTitle
           title="CREATURES OF THE REALM"
           subtitle="Spirits, Gods & Monsters Across the Shattered Isles"
         />
 
-        <div className="flex justify-center gap-2 mb-12 flex-wrap">
+        <div className="grid gap-3 mb-12 sm:grid-cols-3">
           {CHAPTERS.map((ch, i) => (
             <button
               key={i}
@@ -327,13 +348,20 @@ const CreaturesSection = () => {
                 setActiveChapter(i);
                 setSelectedCreature(null);
               }}
-              className={`font-display text-[13px] tracking-[0.2em] px-5 py-3 border transition-all duration-300 ${
+              className={`group relative overflow-hidden text-left px-4 py-4 border transition-all duration-300 min-h-[108px] ${
                 activeChapter === i
-                  ? 'border-gold/60 bg-gold/10 text-gold'
+                  ? 'border-gold/60 bg-background/80 text-gold shadow-[0_0_30px_hsl(var(--gold)/0.18)]'
                   : 'border-gold/10 bg-background/50 text-muted-foreground hover:border-gold/30 hover:text-foreground'
               }`}
             >
-              CHAPTER {ch.num} — {ch.title.toUpperCase()}
+              <div className={`absolute inset-0 bg-gradient-to-br ${CHAPTER_ACCENTS[i]} ${activeChapter === i ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'} transition-opacity`} />
+              <div className="relative z-[1]">
+                <p className="font-display text-[10px] tracking-[0.26em] mb-1 text-gold/70">CHAPTER {ch.num}</p>
+                <h3 className="font-display text-[13px] sm:text-[12px] lg:text-[13px] tracking-[0.16em] leading-tight mb-2">
+                  {ch.realm.toUpperCase()}
+                </h3>
+                <p className="font-body text-xs sm:text-[11px] lg:text-xs text-foreground/70">{ch.threat}</p>
+              </div>
             </button>
           ))}
         </div>
@@ -365,7 +393,12 @@ const CreaturesSection = () => {
                 </div>
 
                 <div className="p-5 md:p-6">
-                  <p className="font-display text-[11px] tracking-[0.3em] text-gold/60 mb-2">BOSS ENCOUNTER</p>
+                  <div className="flex flex-wrap items-center gap-2 mb-2">
+                    <p className="font-display text-[11px] tracking-[0.3em] text-gold/60">BOSS ENCOUNTER</p>
+                    <span className="font-display text-[10px] tracking-[0.22em] px-2 py-1 border border-gold/20 text-foreground/80">
+                      {chapter.title.toUpperCase()}
+                    </span>
+                  </div>
                   <h3 className="font-display text-[22px] tracking-wider text-gold mb-2">{chapterBoss.name.toUpperCase()}</h3>
                   <p className="font-display text-[12px] tracking-[0.2em] text-muted-foreground mb-3">{chapterBoss.role.toUpperCase()}</p>
                   <p className="font-body text-foreground/85 text-sm leading-relaxed max-w-2xl">{chapterBoss.desc}</p>
@@ -373,11 +406,11 @@ const CreaturesSection = () => {
               </div>
             </motion.div>
 
-            <div className="grid md:grid-cols-3 gap-6 mb-8">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
               {chapter.creatures.map((creature, i) => (
                 <motion.div
                   key={creature.name}
-                  className={`group relative cursor-pointer pixel-border overflow-hidden transition-all duration-300 hover:-translate-y-1 ${
+                  className={`group relative cursor-pointer pixel-border overflow-hidden transition-all duration-300 hover:-translate-y-1.5 ${
                     selectedCreature?.name === creature.name
                       ? `ring-2 ring-gold/50 ${chapter.accentBorder}`
                       : 'hover:border-gold/30'
@@ -393,7 +426,7 @@ const CreaturesSection = () => {
                     )
                   }
                 >
-                  <div className="relative h-[360px] overflow-hidden">
+                  <div className="relative h-[370px] overflow-hidden">
                     <div className={`absolute inset-0 bg-gradient-to-br ${chapter.detailOverlay}`} />
                     <img
                       src={creature.image}
@@ -424,6 +457,8 @@ const CreaturesSection = () => {
                         {creature.name.toUpperCase()}
                       </h3>
                     </div>
+
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[linear-gradient(120deg,transparent_20%,hsl(var(--gold)/0.14)_48%,transparent_75%)]" />
                   </div>
                 </motion.div>
               ))}
@@ -438,14 +473,15 @@ const CreaturesSection = () => {
                   transition={{ duration: 0.3 }}
                   className="overflow-hidden"
                 >
-                  <div className={`pixel-border p-6 md:p-8 bg-background/80 backdrop-blur-sm border ${chapter.accentBorder}`}>
+                  <div className={`relative pixel-border p-6 md:p-8 bg-background/80 backdrop-blur-sm border ${chapter.accentBorder} overflow-hidden`}>
+                    <div className={`absolute inset-0 bg-gradient-to-br ${chapter.detailOverlay} opacity-35`} />
                     <div className="flex flex-col md:flex-row gap-6 items-start">
                       <img
                         src={selectedCreature.image}
                         alt={selectedCreature.name}
-                        className="w-24 h-24 md:w-32 md:h-32 object-contain pixel-border flex-shrink-0 bg-background/30"
+                        className="relative z-[1] w-24 h-24 md:w-32 md:h-32 object-contain pixel-border flex-shrink-0 bg-background/30"
                       />
-                      <div className="flex-1">
+                      <div className="relative z-[1] flex-1">
                         <div className="flex items-center gap-3 mb-2 flex-wrap">
                           <h4 className="font-display text-[18px] tracking-wider text-gold">
                             {selectedCreature.name.toUpperCase()}
@@ -460,6 +496,23 @@ const CreaturesSection = () => {
                         <p className="text-foreground/80 text-sm leading-relaxed font-body">
                           {selectedCreature.desc}
                         </p>
+
+                        <div className="mt-4 pt-4 border-t border-gold/15 grid sm:grid-cols-3 gap-2">
+                          <div className="bg-background/35 border border-gold/15 px-3 py-2">
+                            <p className="font-display text-[10px] tracking-[0.22em] text-gold/65">DOMAIN</p>
+                            <p className="font-body text-xs text-foreground/80 mt-1">{chapter.realm}</p>
+                          </div>
+                          <div className="bg-background/35 border border-gold/15 px-3 py-2">
+                            <p className="font-display text-[10px] tracking-[0.22em] text-gold/65">THREAT</p>
+                            <p className="font-body text-xs text-foreground/80 mt-1">{chapter.threat}</p>
+                          </div>
+                          <div className="bg-background/35 border border-gold/15 px-3 py-2">
+                            <p className="font-display text-[10px] tracking-[0.22em] text-gold/65">ENCOUNTER TYPE</p>
+                            <p className="font-body text-xs text-foreground/80 mt-1">
+                              {selectedCreature.isBoss ? 'Boss Encounter' : 'Field Encounter'}
+                            </p>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
