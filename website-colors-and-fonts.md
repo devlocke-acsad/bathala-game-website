@@ -12,7 +12,7 @@
 - Source file: assets/fonts/PixeledEnglishFont.otf
 - Main usage: Hero/title retro styling
 
-3. Crimson Text
+3. Playfair Display
 - Type: Serif body font (Google Fonts)
 - Main usage: Body copy and long-form text
 
@@ -65,7 +65,7 @@ Additional accent colors used in creature element tags and chapter overlays:
 ## Notes for PowerPoint Consistency
 
 1. Heading font: Use dungeon-mode (or a similar fantasy display font if unavailable in PPT).
-2. Body font: Use Crimson Text.
+2. Body font: Use Playfair Display.
 3. Primary visual identity: Dark charcoal background with warm gold highlights.
 4. Supporting accents: Emerald, cyan, amber, and red for element/category coding.
 5. For quick slide theming:

@@ -19,7 +19,7 @@ export default {
       fontFamily: {
         display: ['"dungeon-mode"', "monospace"],
         pixel: ['"pixeled"', "monospace"],
-        body: ['"Crimson Text"', "serif"],
+        body: ['"Playfair Display"', "serif"],
       },
       colors: {
         border: "hsl(var(--border))",

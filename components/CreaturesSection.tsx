@@ -3,15 +3,38 @@ import { motion, AnimatePresence } from 'framer-motion';
 import SectionWrapper from './SectionWrapper';
 import SectionTitle from './SectionTitle';
 
-import tikbalang from '@/assets/images/creature-tikbalang.png';
-import kapre from '@/assets/images/creature-kapre.png';
-import nuno from '@/assets/images/creature-nuno.png';
-import bakunawa from '@/assets/images/creature-bakunawa.png';
-import sirena from '@/assets/images/creature-sirena.png';
-import kataw from '@/assets/images/creature-kataw.png';
-import falseBathala from '@/assets/images/creature-false-bathala.png';
-import diwata from '@/assets/images/creature-diwata.png';
-import engkanto from '@/assets/images/creature-engkanto.png';
+import amomongo from '@/assets/images/chapter1/amomongo_battle.png';
+import balete from '@/assets/images/chapter1/balete_battle.png';
+import bungisngis from '@/assets/images/chapter1/bungisngis_battle.png';
+import duwende from '@/assets/images/chapter1/duwende_battle.png';
+import kapre from '@/assets/images/chapter1/kapre_battle.png';
+import mangangaway from '@/assets/images/chapter1/mangangaway_battle.png';
+import sigbin from '@/assets/images/chapter1/sigbin_battle.png';
+import tawongLipod from '@/assets/images/chapter1/tawonglipod_battle.png';
+import tikbalang from '@/assets/images/chapter1/tikbalang_battle.png';
+import tiyanak from '@/assets/images/chapter1/tiyanak_battle.png';
+
+import apoyTubig from '@/assets/images/chapter2/apoy_tubig_battle.png';
+import bakunawa from '@/assets/images/chapter2/bakunawa_battle.png';
+import bangkilan from '@/assets/images/chapter2/bangkilan_battle.png';
+import berbalang from '@/assets/images/chapter2/berbalang_battle.png';
+import berberoka from '@/assets/images/chapter2/berberoka_battle.png';
+import kataw from '@/assets/images/chapter2/kataw_battle.png';
+import magindara from '@/assets/images/chapter2/magindara_battle.png';
+import santelmo from '@/assets/images/chapter2/santelmo_battle.png';
+import sirena from '@/assets/images/chapter2/sirena_battle.png';
+import siyokoy from '@/assets/images/chapter2/siyokoy_battle.png';
+
+import alan from '@/assets/images/chapter3/alan_battle.png';
+import apolaki from '@/assets/images/chapter3/apolaki_battle.png';
+import bulalakaw from '@/assets/images/chapter3/bulalakaw_battle.png';
+import diwata from '@/assets/images/chapter3/diwata_battle.png';
+import ekek from '@/assets/images/chapter3/ekek_battle.png';
+import falseBathala from '@/assets/images/chapter3/false_bathala_battle.png';
+import minokawa from '@/assets/images/chapter3/minokawa_battle.png';
+import ribungLinti from '@/assets/images/chapter3/ribung_linti_battle.png';
+import sarimanok from '@/assets/images/chapter3/sarimanok_battle.png';
+import tigmanukan from '@/assets/images/chapter3/tigmanukan_battle.png';
 
 interface Creature {
   name: string;
@@ -19,12 +42,14 @@ interface Creature {
   element: string;
   desc: string;
   image: string;
+  isBoss?: boolean;
 }
 
 interface Chapter {
   num: string;
   title: string;
-  color: string;
+  imageOverlay: string;
+  detailOverlay: string;
   accentBorder: string;
   creatures: Creature[];
 }
@@ -33,87 +58,240 @@ const CHAPTERS: Chapter[] = [
   {
     num: 'I',
     title: 'The Corrupted Ancestral Forests',
-    color: 'from-emerald-500/20 to-emerald-900/5',
+    imageOverlay: 'from-emerald-900/80 via-background/60 to-background/95',
+    detailOverlay: 'from-emerald-500/20 to-emerald-900/10',
     accentBorder: 'border-emerald-500/30',
     creatures: [
       {
-        name: 'Tikbalang',
-        role: 'Trickster Guardian',
+        name: 'Amomongo',
+        role: 'Ape Stalker',
         element: 'LUPA',
-        desc: 'A towering horse-headed spirit that leads travelers astray in the enchanted forests. Once a noble protector, now corrupted by the engkanto\'s deceit.',
-        image: tikbalang,
+        desc: 'A savage forest predator that lurks in the roots of cursed groves, striking isolated travelers before vanishing into the brush.',
+        image: amomongo,
+      },
+      {
+        name: 'Balete Wraith',
+        role: 'Tree-Bound Haunt',
+        element: 'HANGIN',
+        desc: 'A ghostly spirit fused to ancient balete bark, draining warmth and will from those who step beneath its hanging branches.',
+        image: balete,
+      },
+      {
+        name: 'Bungisngis',
+        role: 'Laughing Brute',
+        element: 'LUPA',
+        desc: 'A one-eyed giant with a booming cackle that echoes through the woodlands, smashing through trees in blind fury.',
+        image: bungisngis,
+      },
+      {
+        name: 'Duwende',
+        role: 'Mound Caster',
+        element: 'LUPA',
+        desc: 'A spiteful earth spirit that curses trespassers with rot and misfortune from hidden mounds beneath tangled roots.',
+        image: duwende,
       },
       {
         name: 'Kapre',
         role: 'Flame Warden',
         element: 'APOY',
-        desc: 'A giant tree-dweller wreathed in smoke and embers. His burning cigar sets ablaze the very forests he once swore to protect.',
+        desc: 'A towering tree guardian wreathed in smoke and embers, now burning the very forest he once protected.',
         image: kapre,
+        isBoss: true,
       },
       {
-        name: 'Nuno sa Punso',
-        role: 'Curse Weaver',
+        name: 'Mangangaway',
+        role: 'Night Hexer',
+        element: 'HANGIN',
+        desc: 'A drifting witch-like specter that whispers curses through fog, unraveling concentration with hallucinatory dread.',
+        image: mangangaway,
+      },
+      {
+        name: 'Sigbin',
+        role: 'Dusk Prowler',
         element: 'LUPA',
-        desc: 'A diminutive earth spirit of terrible wrath. Disturb his mound and suffer curses that wither body and soul alike.',
-        image: nuno,
+        desc: 'A twisted nocturnal beast that hunts by scent, darting through undergrowth with unnerving, loping bursts of speed.',
+        image: sigbin,
+      },
+      {
+        name: 'Tawong Lipod',
+        role: 'Veiled Guardian',
+        element: 'HANGIN',
+        desc: 'A pale, elusive protector of hidden routes in the forest that turns hostile when sacred places are defiled.',
+        image: tawongLipod,
+      },
+      {
+        name: 'Tikbalang',
+        role: 'Path Corrupter',
+        element: 'HANGIN',
+        desc: 'A horse-headed trickster that twists roads and perception, luring intruders deeper into corrupted woodland territory.',
+        image: tikbalang,
+      },
+      {
+        name: 'Tiyanak',
+        role: 'Lure Spawn',
+        element: 'APOY',
+        desc: 'A childlike fiend that feigns helplessness before unleashing feral violence under the cover of night.',
+        image: tiyanak,
       },
     ],
   },
   {
     num: 'II',
     title: 'The Submerged Barangays',
-    color: 'from-cyan-500/20 to-cyan-900/5',
+    imageOverlay: 'from-cyan-900/80 via-background/60 to-background/95',
+    detailOverlay: 'from-cyan-500/20 to-cyan-900/10',
     accentBorder: 'border-cyan-500/30',
     creatures: [
+      {
+        name: 'Apoy-Tubig',
+        role: 'Elemental Rift',
+        element: 'APOY',
+        desc: 'A volatile spirit born where flame and tide collide, surging between scorching bursts and crashing water strikes.',
+        image: apoyTubig,
+      },
       {
         name: 'Bakunawa',
         role: 'Moon Devourer',
         element: 'TUBIG',
-        desc: 'A colossal sea serpent that rises from the abyss to swallow the moon. Its hunger threatens to plunge the world into eternal darkness.',
+        desc: 'A colossal sea serpent that rises from abyssal trenches to swallow moonlight and drown coasts in shadow.',
         image: bakunawa,
+        isBoss: true,
       },
       {
-        name: 'Sirena',
-        role: 'Tide Enchantress',
+        name: 'Bangkilan',
+        role: 'Reef Skirmisher',
         element: 'TUBIG',
-        desc: 'A mesmerizing mermaid whose haunting song lures sailors to the depths. Beautiful and deadly, she guards sunken Visayan treasures.',
-        image: sirena,
+        desc: 'A swift reef-born raider that ambushes from kelp shadows, striking in packs before slipping back into the deep.',
+        image: bangkilan,
+      },
+      {
+        name: 'Berbalang',
+        role: 'Flesh Seer',
+        element: 'HANGIN',
+        desc: 'A corpse-feeding horror with prophetic malice, lingering over battlefields and feeding on fear and ruin.',
+        image: berbalang,
+      },
+      {
+        name: 'Berberoka',
+        role: 'Current Trapper',
+        element: 'TUBIG',
+        desc: 'A cunning marsh predator that manipulates flood and ebb to strand victims before dragging them below.',
+        image: berberoka,
       },
       {
         name: 'Kataw',
         role: 'Abyssal Warrior',
         element: 'TUBIG',
-        desc: 'A fierce merman warrior of the deep coral kingdoms. Armed with a living trident of bone and coral, he commands the ocean currents.',
+        desc: 'A hardened deep-sea soldier wielding coral-forged weapons and commanding crushing pressure waves.',
         image: kataw,
+      },
+      {
+        name: 'Magindara',
+        role: 'Shoal Siren',
+        element: 'TUBIG',
+        desc: 'A guardian of hidden shoals whose songs can calm storms or drag entire crews toward jagged reefs.',
+        image: magindara,
+      },
+      {
+        name: 'Santelmo',
+        role: 'Wandering Ember',
+        element: 'APOY',
+        desc: 'A drifting will-o\'wisp that dances over black water, igniting panic and leading ships into deadly waters.',
+        image: santelmo,
+      },
+      {
+        name: 'Sirena',
+        role: 'Tide Enchantress',
+        element: 'TUBIG',
+        desc: 'A mesmerizing mermaid with a haunting song that lures sailors off course toward submerged ruins.',
+        image: sirena,
+      },
+      {
+        name: 'Siyokoy',
+        role: 'Deep Marauder',
+        element: 'TUBIG',
+        desc: 'A heavily armored sea fiend that patrols drowned barangays and assaults anyone trespassing in its hunting grounds.',
+        image: siyokoy,
       },
     ],
   },
   {
     num: 'III',
     title: 'The Skyward Citadel',
-    color: 'from-amber-500/20 to-amber-900/5',
+    imageOverlay: 'from-amber-900/80 via-background/60 to-background/95',
+    detailOverlay: 'from-amber-500/20 to-amber-900/10',
     accentBorder: 'border-amber-500/30',
     creatures: [
       {
-        name: 'False Bathala',
-        role: 'Usurper God',
+        name: 'Alan',
+        role: 'Sky Weaver',
         element: 'HANGIN',
-        desc: 'An impostor deity wearing a cracked golden mask. Born from mythic betrayal, it sits upon a stolen celestial throne radiating corrupted divinity.',
-        image: falseBathala,
+        desc: 'A cloud-haunting spirit that mends itself with stolen flesh and rides storm currents above the citadel.',
+        image: alan,
+      },
+      {
+        name: 'Apolaki',
+        role: 'Sun Champion',
+        element: 'APOY',
+        desc: 'A radiant warrior of solar fire whose fallen oath now fuels relentless judgment on all challengers.',
+        image: apolaki,
+      },
+      {
+        name: 'Bulalakaw',
+        role: 'Comet Reaper',
+        element: 'HANGIN',
+        desc: 'A celestial drake that streaks through the upper sky like a living meteor, scattering starlit debris.',
+        image: bulalakaw,
       },
       {
         name: 'Diwata',
         role: 'Nature Spirit',
         element: 'LUPA',
-        desc: 'An ethereal nature goddess torn between worlds. Her butterfly wings shimmer with fading magic as the celestial corruption spreads.',
+        desc: 'An ethereal guardian spirit caught between the mortal wilds and the failing heavens.',
         image: diwata,
       },
       {
-        name: 'Celestial Engkanto',
-        role: 'Archdeceiver',
+        name: 'Ekek',
+        role: 'Carrion Herald',
         element: 'HANGIN',
-        desc: 'The most dangerous of trickster fae — a being of pure illusion dwelling in the heavens. Its radiant beauty conceals an ancient malice.',
-        image: engkanto,
+        desc: 'A ravenous sky scavenger whose extended tongue and shrill cries signal omens of ruin.',
+        image: ekek,
+      },
+      {
+        name: 'False Bathala',
+        role: 'Usurper God',
+        element: 'HANGIN',
+        desc: 'An impostor deity enthroned in stolen radiance, weaponizing corrupted divinity against the living world.',
+        image: falseBathala,
+        isBoss: true,
+      },
+      {
+        name: 'Minokawa',
+        role: 'Sun Eater',
+        element: 'HANGIN',
+        desc: 'A colossal cosmic bird whose wings eclipse the heavens, plunging the sky into apocalyptic twilight.',
+        image: minokawa,
+      },
+      {
+        name: 'Ribung Linti',
+        role: 'Storm Ascendant',
+        element: 'APOY',
+        desc: 'A lightning-forged entity that channels violent thunder into concentrated strikes across floating ruins.',
+        image: ribungLinti,
+      },
+      {
+        name: 'Sarimanok',
+        role: 'Omen Sovereign',
+        element: 'HANGIN',
+        desc: 'A regal bird of prophecy perched between fate and war, its cry heralding pivotal battles.',
+        image: sarimanok,
+      },
+      {
+        name: 'Tigmanukan',
+        role: 'Fate Messenger',
+        element: 'HANGIN',
+        desc: 'A mythic skybird whose flight patterns foretell fortune or disaster to those daring the upper realm.',
+        image: tigmanukan,
       },
     ],
   },
@@ -131,6 +309,7 @@ const CreaturesSection = () => {
   const [selectedCreature, setSelectedCreature] = useState<Creature | null>(null);
 
   const chapter = CHAPTERS[activeChapter];
+  const chapterBoss = chapter.creatures.find((creature) => creature.isBoss) ?? chapter.creatures[0];
 
   return (
     <SectionWrapper id="creatures" className="gradient-section">
@@ -140,7 +319,6 @@ const CreaturesSection = () => {
           subtitle="Spirits, Gods & Monsters Across the Shattered Isles"
         />
 
-        {/* Chapter tabs */}
         <div className="flex justify-center gap-2 mb-12 flex-wrap">
           {CHAPTERS.map((ch, i) => (
             <button
@@ -168,33 +346,63 @@ const CreaturesSection = () => {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4 }}
           >
-            {/* Creature grid */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.35 }}
+              className={`mb-8 pixel-border border ${chapter.accentBorder} bg-background/70 backdrop-blur-sm overflow-hidden`}
+            >
+              <div className="grid md:grid-cols-[220px,1fr] gap-0">
+                <div className={`relative min-h-[220px] bg-gradient-to-br ${chapter.detailOverlay}`}>
+                  <img
+                    src={chapterBoss.image}
+                    alt={chapterBoss.name}
+                    className="w-full h-full object-contain p-5"
+                  />
+                  <div className="absolute top-3 left-3 font-display text-[11px] tracking-[0.25em] px-2 py-1 border border-gold/50 bg-gold/20 text-gold-light">
+                    CHAPTER BOSS
+                  </div>
+                </div>
+
+                <div className="p-5 md:p-6">
+                  <p className="font-display text-[11px] tracking-[0.3em] text-gold/60 mb-2">BOSS ENCOUNTER</p>
+                  <h3 className="font-display text-[22px] tracking-wider text-gold mb-2">{chapterBoss.name.toUpperCase()}</h3>
+                  <p className="font-display text-[12px] tracking-[0.2em] text-muted-foreground mb-3">{chapterBoss.role.toUpperCase()}</p>
+                  <p className="font-body text-foreground/85 text-sm leading-relaxed max-w-2xl">{chapterBoss.desc}</p>
+                </div>
+              </div>
+            </motion.div>
+
             <div className="grid md:grid-cols-3 gap-6 mb-8">
               {chapter.creatures.map((creature, i) => (
                 <motion.div
                   key={creature.name}
-                  className={`group relative cursor-pointer pixel-border overflow-hidden transition-all duration-300 ${
+                  className={`group relative cursor-pointer pixel-border overflow-hidden transition-all duration-300 hover:-translate-y-1 ${
                     selectedCreature?.name === creature.name
                       ? `ring-2 ring-gold/50 ${chapter.accentBorder}`
                       : 'hover:border-gold/30'
+                  } ${
+                    creature.isBoss ? 'ring-1 ring-gold/35 shadow-[0_0_24px_hsl(var(--gold)/0.18)]' : ''
                   }`}
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: i * 0.1, duration: 0.4 }}
+                  transition={{ delay: i * 0.08, duration: 0.35 }}
                   onClick={() =>
                     setSelectedCreature(
                       selectedCreature?.name === creature.name ? null : creature
                     )
                   }
                 >
-                  <div className="relative aspect-square overflow-hidden">
+                  <div className="relative h-[360px] overflow-hidden">
+                    <div className={`absolute inset-0 bg-gradient-to-br ${chapter.detailOverlay}`} />
                     <img
                       src={creature.image}
                       alt={creature.name}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      className="relative z-[1] w-full h-full object-contain px-6 pt-6 pb-24 transition-transform duration-700 group-hover:scale-110"
                     />
-                    <div className={`absolute inset-0 bg-gradient-to-t ${chapter.color} via-transparent to-transparent opacity-60`} />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+                    <div className={`absolute inset-0 bg-gradient-to-t ${chapter.imageOverlay}`} />
+                    <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background via-background/85 to-transparent" />
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,hsl(var(--gold)/0.18),transparent_60%)]" />
 
                     <div className="absolute top-3 right-3">
                       <span className={`font-display text-[11px] tracking-[0.2em] px-2 py-1 border ${ELEMENT_COLORS[creature.element]}`}>
@@ -202,11 +410,17 @@ const CreaturesSection = () => {
                       </span>
                     </div>
 
-                    <div className="absolute bottom-0 left-0 right-0 p-4">
-                      <p className="font-display text-[11px] tracking-[0.25em] text-gold/50 mb-1">
+                    {creature.isBoss && (
+                      <div className="absolute top-3 left-3 font-display text-[10px] tracking-[0.22em] px-2 py-1 border border-gold/50 bg-gold/20 text-gold-light">
+                        BOSS
+                      </div>
+                    )}
+
+                    <div className="absolute bottom-0 left-0 right-0 p-4 bg-background/75 backdrop-blur-md border-t border-gold/15 min-h-[96px] flex flex-col justify-end">
+                      <p className="font-display text-[10px] tracking-[0.25em] text-gold/60 mb-1">
                         {creature.role.toUpperCase()}
                       </p>
-                      <h3 className="font-display text-[16px] tracking-wider text-foreground group-hover:text-gold transition-colors">
+                      <h3 className="font-display text-[15px] leading-tight tracking-wider text-foreground group-hover:text-gold transition-colors" style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
                         {creature.name.toUpperCase()}
                       </h3>
                     </div>
@@ -215,7 +429,6 @@ const CreaturesSection = () => {
               ))}
             </div>
 
-            {/* Selected creature detail panel */}
             <AnimatePresence>
               {selectedCreature && (
                 <motion.div
@@ -230,7 +443,7 @@ const CreaturesSection = () => {
                       <img
                         src={selectedCreature.image}
                         alt={selectedCreature.name}
-                        className="w-24 h-24 md:w-32 md:h-32 object-cover pixel-border flex-shrink-0"
+                        className="w-24 h-24 md:w-32 md:h-32 object-contain pixel-border flex-shrink-0 bg-background/30"
                       />
                       <div className="flex-1">
                         <div className="flex items-center gap-3 mb-2 flex-wrap">
