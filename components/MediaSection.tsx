@@ -4,41 +4,34 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight, Maximize2, Play } from "lucide-react";
 import SectionWrapper from "./SectionWrapper";
 import SectionTitle from "./SectionTitle";
-import combatImg from "@/assets/images/combat.png";
-import overworldImg from "@/assets/images/overworld_map.png";
-import overworldGif from "@/assets/videos/overworld.gif";
-import combatGif from "@/assets/videos/combat.gif";
-import titleGif from "@/assets/videos/title.gif";
+import combatShowcase from "@/assets/images/showcase/COMBAT.gif";
+import overworldShowcase from "@/assets/images/showcase/OVERWORLD.gif";
+import bossBattleShowcase from "@/assets/images/showcase/BOSS BATTLE.gif";
+import storyShowcase from "@/assets/images/showcase/STORY.gif";
 
 const GALLERY = [
   {
-    src: combatImg,
-    alt: "Combat scene showing a Full House",
-    caption: "Poker-based combat — play a Full House for devastating damage",
+    src: combatShowcase,
+    alt: "Combat encounter against Sigbin Charger",
+    caption: "Poker-based combat encounters where every card play can turn the tide",
     tag: "COMBAT",
   },
   {
-    src: overworldImg,
-    alt: "The overworld map at night",
-    caption: "Procedurally generated overworld map under the night sky",
+    src: overworldShowcase,
+    alt: "Chapter 1 overworld in the Enchanted Forest",
+    caption: "Explore Chapter 1 and route through hazards before the boss cycle completes",
     tag: "OVERWORLD",
   },
   {
-    src: overworldGif,
-    alt: "The Mysterious Merchant's shop interface",
-    caption: "Visit the Mysterious Merchant to upgrade your deck",
-    tag: "GAMEPLAY",
-  },
-  {
-    src: combatGif,
-    alt: "The final boss, the False Bathala",
-    caption: "Face the False Bathala in an epic final confrontation",
+    src: bossBattleShowcase,
+    alt: "Bakunawa boss battle sequence",
+    caption: "Boss fight sequences with dramatic transitions and escalating pressure",
     tag: "BOSS FIGHT",
   },
   {
-    src: titleGif,
-    alt: "The prologue storyboard",
-    caption: "The origin story told through hand-crafted storyboards",
+    src: storyShowcase,
+    alt: "Chapter 2 scene in the Submerged Barangays",
+    caption: "Story-driven chapter progression across distinct biomes and atmospheres",
     tag: "STORY",
   },
 ];
