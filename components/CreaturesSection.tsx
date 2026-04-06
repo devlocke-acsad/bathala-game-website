@@ -473,64 +473,6 @@ const CreaturesSection = () => {
               </div>
             </motion.div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
-              {chapter.creatures.map((creature, i) => (
-                <motion.div
-                  key={creature.name}
-                  className={`group relative cursor-pointer overflow-hidden rounded-sm border transition-all duration-500 hover:-translate-y-2 ${
-                    selectedCreature?.name === creature.name
-                      ? `ring-2 ring-gold/70 ${chapter.accentBorder} shadow-[0_0_40px_hsl(var(--gold)/0.2)]`
-                      : 'border-white/10 hover:border-gold/50 shadow-lg hover:shadow-[0_0_20px_hsl(var(--gold)/0.15)]'
-                  } ${
-                    creature.isBoss ? 'ring-1 ring-gold/50 shadow-[0_0_30px_hsl(var(--gold)/0.25)]' : ''
-                  }`}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: i * 0.08, duration: 0.4 }}
-                  onClick={() =>
-                    setSelectedCreature(
-                      selectedCreature?.name === creature.name ? null : creature
-                    )
-                  }
-                >
-                  <div className="relative h-[480px] overflow-hidden bg-background group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-shadow duration-500">
-                    <div className={`absolute inset-0 bg-gradient-to-br ${chapter.detailOverlay} opacity-80`} />
-                    <img
-                      src={creature.image}
-                      alt={creature.name}
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 filter drop-shadow-2xl mix-blend-normal opacity-90 group-hover:opacity-100 pointer-events-none"
-                    />
-                    <div className={`absolute inset-0 bg-gradient-to-t ${chapter.imageOverlay} opacity-90`} />
-                    <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background via-background/85 to-transparent" />
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,hsl(var(--gold)/0.15),transparent_60%)]" />
-
-                    <div className="absolute top-3 right-3 z-10">
-                      <span className={`font-display text-[11px] tracking-[0.2em] px-2 py-1 border ${ELEMENT_COLORS[creature.element]} bg-background/50 backdrop-blur-sm`}>
-                        {creature.element}
-                      </span>
-                    </div>
-
-                    {creature.isBoss && (
-                      <div className="absolute top-3 left-3 font-display text-[10px] tracking-[0.22em] px-2 py-1 border border-gold/50 bg-gold/20 backdrop-blur-sm text-gold-light shadow-[0_0_15px_hsl(var(--gold)/0.3)] z-10">
-                        BOSS
-                      </div>
-                    )}
-
-                    <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-background via-background/95 to-background/40 backdrop-blur-sm border-t border-gold/20 min-h-[110px] flex flex-col justify-end z-10">
-                      <p className="font-display text-[10px] tracking-[0.25em] text-gold/80 mb-1 drop-shadow-md">
-                        {creature.role.toUpperCase()}
-                      </p>
-                      <h3 className="font-display text-[18px] leading-tight tracking-widest text-foreground group-hover:text-gold transition-colors drop-shadow-lg" style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
-                        {creature.name.toUpperCase()}
-                      </h3>
-                    </div>
-
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[linear-gradient(120deg,transparent_20%,hsl(var(--gold)/0.1)_48%,transparent_75%)] pointer-events-none z-20" />
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
             <AnimatePresence>
               {selectedCreature && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-hidden">
@@ -567,11 +509,11 @@ const CreaturesSection = () => {
                       
                       <div className="flex flex-col md:flex-row gap-10 items-center md:items-start relative z-10">
                         <div className="relative group perspective-1000 w-48 h-48 md:w-64 md:h-64 flex-shrink-0">
-                          <div className="absolute inset-0 bg-gradient-to-tr from-gold/20 to-transparent rounded-full blur-2xl opacity-50 group-hover:opacity-80 transition-opacity duration-700 pointer-events-none" />
+                          <div className="absolute inset-0 bg-gradient-to-tr from-gold/20 to-transparent rounded-sm blur-2xl opacity-50 group-hover:opacity-80 transition-opacity duration-700 pointer-events-none" />
                           <img
                             src={selectedCreature.image}
                             alt={selectedCreature.name}
-                            className="relative z-[1] w-full h-full object-contain rounded-full bg-background/40 backdrop-blur-sm p-4 filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)] transition-transform duration-700 hover:rotate-2 hover:scale-105"
+                            className="relative z-[1] w-full h-full object-cover rounded-sm bg-background/40 backdrop-blur-sm p-4 filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)] transition-transform duration-700 hover:rotate-2 hover:scale-105 border border-gold/20"
                           />
                         </div>
                         <div className="flex-1 w-full">
