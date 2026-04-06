@@ -532,22 +532,7 @@ const CreaturesSection = () => {
                             {selectedCreature.desc}
                           </p>
 
-                          <div className="grid sm:grid-cols-3 gap-4 pt-6 border-t border-gold/20">
-                            <div className="bg-background/80 border border-gold/20 p-4 rounded-sm shadow-inner overflow-hidden relative">
-                              <p className="font-display text-[11px] tracking-[0.3em] text-gold/80 mb-2 relative z-10">DOMAIN</p>
-                              <p className="font-body text-sm text-foreground/90 font-medium relative z-10">{chapter.realm}</p>
-                            </div>
-                            <div className="bg-background/80 border border-gold/20 p-4 rounded-sm shadow-inner overflow-hidden relative">
-                              <p className="font-display text-[11px] tracking-[0.3em] text-gold/80 mb-2 relative z-10">THREAT</p>
-                              <p className="font-body text-sm text-foreground/90 font-medium relative z-10">{chapter.threat}</p>
-                            </div>
-                            <div className="bg-background/80 border border-gold/20 p-4 rounded-sm shadow-inner overflow-hidden relative">
-                              <p className="font-display text-[11px] tracking-[0.3em] text-gold/80 mb-2 relative z-10">ENCOUNTER</p>
-                              <p className="font-body text-sm text-foreground/90 font-medium relative z-10">
-                                {selectedCreature.isBoss ? 'Epic Boss Battle' : 'Field Encounter'}
-                              </p>
-                            </div>
-                          </div>
+
                         </div>
                       </div>
                     </div>
