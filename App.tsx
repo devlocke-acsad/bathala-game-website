@@ -10,6 +10,7 @@ import FeaturesSection from './components/FeaturesSection';
 import ThesisSection from './components/ThesisSection';
 import SurveySection from './components/SurveySection';
 import MediaSection from './components/MediaSection';
+import YouTubeSection from './components/YouTubeSection';
 import AboutSection from './components/AboutSection';
 import Footer from './components/Footer';
 import LoadingScreen from './components/LoadingScreen';
@@ -33,6 +34,7 @@ const App = () => {
         <ThesisSection />
         <SurveySection />
         <MediaSection />
+        <YouTubeSection />
         <AboutSection />
         <Footer />
       </div>

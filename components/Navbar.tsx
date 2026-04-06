@@ -9,6 +9,7 @@ const NAV_ITEMS = [
   { label: 'Features', href: '#features' },
   { label: 'Thesis', href: '#thesis' },
   { label: 'Media', href: '#media' },
+  { label: 'YouTube', href: '#youtube' },
   { label: 'About', href: '#about' },
 ];
 

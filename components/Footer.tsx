@@ -25,6 +25,7 @@ const Footer = () => {
               {[
                 { label: "Play Bathala", href: "https://play.bathala.quest/" },
                 { label: "GitHub", href: "https://github.com/Devlocke-Studios" },
+                { label: "YouTube", href: "https://www.youtube.com/@devlock%C3%A8" },
               ].map((link) => (
                 <a
                   key={link.label}
@@ -53,6 +54,15 @@ const Footer = () => {
                 className="flex items-center gap-2 text-muted-foreground text-sm hover:text-gold transition-colors"
               >
                 Facebook
+                <ExternalLink className="w-3 h-3" />
+              </a>
+              <a
+                href="https://www.youtube.com/@devlock%C3%A8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-muted-foreground text-sm hover:text-gold transition-colors"
+              >
+                YouTube
                 <ExternalLink className="w-3 h-3" />
               </a>
             </div>
