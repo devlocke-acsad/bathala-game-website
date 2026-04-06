@@ -3,38 +3,38 @@ import { motion, AnimatePresence } from 'framer-motion';
 import SectionWrapper from './SectionWrapper';
 import SectionTitle from './SectionTitle';
 
-import amomongo from '@/assets/images/chapter1/amomongo_battle.png';
-import balete from '@/assets/images/chapter1/balete_battle.png';
-import bungisngis from '@/assets/images/chapter1/bungisngis_battle.png';
-import duwende from '@/assets/images/chapter1/duwende_battle.png';
-import kapre from '@/assets/images/chapter1/kapre_battle.png';
-import mangangaway from '@/assets/images/chapter1/mangangaway_battle.png';
-import sigbin from '@/assets/images/chapter1/sigbin_battle.png';
-import tawongLipod from '@/assets/images/chapter1/tawonglipod_battle.png';
-import tikbalang from '@/assets/images/chapter1/tikbalang_battle.png';
-import tiyanak from '@/assets/images/chapter1/tiyanak_battle.png';
+import amomongo from '@/assets/images/discover/chapter1/amomongo_almanac.png';
+import balete from '@/assets/images/discover/chapter1/balete_almanac.png';
+import bungisngis from '@/assets/images/discover/chapter1/bungisngis_almanac.png';
+import duwende from '@/assets/images/discover/chapter1/duwindi_almanac.png';
+import kapre from '@/assets/images/discover/chapter1/kapre_almanac.png';
+import mangangaway from '@/assets/images/discover/chapter1/mangangaway_almanac.png';
+import sigbin from '@/assets/images/discover/chapter1/sigbin_almanac bg.png';
+import tawongLipod from '@/assets/images/discover/chapter1/tawonglipod_almanac.png';
+import tikbalang from '@/assets/images/discover/chapter1/tikbalang_almanac.png';
+import tiyanak from '@/assets/images/discover/chapter1/tiyanak_almanac.png';
 
-import apoyTubig from '@/assets/images/chapter2/apoy_tubig_battle.png';
-import bakunawa from '@/assets/images/chapter2/bakunawa_battle.png';
-import bangkilan from '@/assets/images/chapter2/bangkilan_battle.png';
-import berbalang from '@/assets/images/chapter2/berbalang_battle.png';
-import berberoka from '@/assets/images/chapter2/berberoka_battle.png';
-import kataw from '@/assets/images/chapter2/kataw_battle.png';
-import magindara from '@/assets/images/chapter2/magindara_battle.png';
-import santelmo from '@/assets/images/chapter2/santelmo_battle.png';
-import sirena from '@/assets/images/chapter2/sirena_battle.png';
-import siyokoy from '@/assets/images/chapter2/siyokoy_battle.png';
+import apoyTubig from '@/assets/images/discover/chapter2/apoy_tubig_splash.png';
+import bakunawa from '@/assets/images/discover/chapter2/bakunawa_splash.png';
+import bangkilan from '@/assets/images/discover/chapter2/sunken_bangkilan_splash.png';
+import berbalang from '@/assets/images/discover/chapter2/berbalang_splash.png';
+import berberoka from '@/assets/images/discover/chapter2/berberoka_splash.png';
+import kataw from '@/assets/images/discover/chapter2/kataw_splash.png';
+import magindara from '@/assets/images/discover/chapter2/maginda_swarm_splash.png';
+import santelmo from '@/assets/images/discover/chapter2/santelmo_splash.png';
+import sirena from '@/assets/images/discover/chapter2/sirena_splash.png';
+import siyokoy from '@/assets/images/discover/chapter2/siyokoy_splash.png';
 
-import alan from '@/assets/images/chapter3/alan_battle.png';
-import apolaki from '@/assets/images/chapter3/apolaki_battle.png';
-import bulalakaw from '@/assets/images/chapter3/bulalakaw_battle.png';
-import diwata from '@/assets/images/chapter3/diwata_battle.png';
-import ekek from '@/assets/images/chapter3/ekek_battle.png';
-import falseBathala from '@/assets/images/chapter3/false_bathala_battle.png';
-import minokawa from '@/assets/images/chapter3/minokawa_battle.png';
-import ribungLinti from '@/assets/images/chapter3/ribung_linti_battle.png';
-import sarimanok from '@/assets/images/chapter3/sarimanok_battle.png';
-import tigmanukan from '@/assets/images/chapter3/tigmanukan_battle.png';
+import alan from '@/assets/images/discover/chapter3/alan_splash.png';
+import apolaki from '@/assets/images/discover/chapter3/apolaki_splash.png';
+import bulalakaw from '@/assets/images/discover/chapter3/bulalakaw_flamekeeper_splash.png';
+import diwata from '@/assets/images/discover/chapter3/diwata_sentinel_splash.png';
+import ekek from '@/assets/images/discover/chapter3/ekek_splash.png';
+import falseBathala from '@/assets/images/discover/chapter3/false_bathala_splash.png';
+import minokawa from '@/assets/images/discover/chapter3/minokawa_harbinger_splash.png';
+import ribungLinti from '@/assets/images/discover/chapter3/ribung_linti_splash.png';
+import sarimanok from '@/assets/images/discover/chapter3/sarimanok_watcher_splash.png';
+import tigmanukan from '@/assets/images/discover/chapter3/tigamamanukan_watcher_splash.png';
 
 interface Creature {
   name: string;
@@ -340,7 +340,7 @@ const CreaturesSection = () => {
           subtitle="Spirits, Gods & Monsters Across the Shattered Isles"
         />
 
-        <div className="grid gap-3 mb-12 sm:grid-cols-3">
+        <div className="grid gap-4 mb-16 sm:grid-cols-3 relative">
           {CHAPTERS.map((ch, i) => (
             <button
               key={i}
@@ -348,20 +348,28 @@ const CreaturesSection = () => {
                 setActiveChapter(i);
                 setSelectedCreature(null);
               }}
-              className={`group relative overflow-hidden text-left px-4 py-4 border transition-all duration-300 min-h-[108px] ${
+              className={`group relative overflow-hidden text-left px-6 py-6 border-2 transition-all duration-500 min-h-[140px] ${
                 activeChapter === i
-                  ? 'border-gold/60 bg-background/80 text-gold shadow-[0_0_30px_hsl(var(--gold)/0.18)]'
-                  : 'border-gold/10 bg-background/50 text-muted-foreground hover:border-gold/30 hover:text-foreground'
+                  ? 'border-gold/80 bg-background/90 text-gold shadow-[0_0_40px_hsl(var(--gold)/0.25)] scale-105 z-10'
+                  : 'border-gold/20 bg-background/60 text-muted-foreground hover:border-gold/50 hover:text-foreground hover:bg-background/80 hover:shadow-[0_0_20px_hsl(var(--gold)/0.15)]'
               }`}
             >
-              <div className={`absolute inset-0 bg-gradient-to-br ${CHAPTER_ACCENTS[i]} ${activeChapter === i ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'} transition-opacity`} />
-              <div className="relative z-[1]">
-                <p className="font-display text-[10px] tracking-[0.26em] mb-1 text-gold/70">CHAPTER {ch.num}</p>
-                <h3 className="font-display text-[13px] sm:text-[12px] lg:text-[13px] tracking-[0.16em] leading-tight mb-2">
-                  {ch.realm.toUpperCase()}
-                </h3>
-                <p className="font-body text-xs sm:text-[11px] lg:text-xs text-foreground/70">{ch.threat}</p>
+              <div className={`absolute inset-0 bg-gradient-to-br ${CHAPTER_ACCENTS[i]} ${activeChapter === i ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'} transition-opacity duration-500`} />
+              <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl ${CHAPTER_ACCENTS[i]} opacity-50 blur-2xl transform translate-x-16 -translate-y-16 group-hover:translate-x-8 group-hover:-translate-y-8 transition-transform duration-700`} />
+              
+              <div className="relative z-[1] flex flex-col h-full justify-between">
+                <div>
+                  <p className="font-display text-[12px] tracking-[0.4em] mb-2 text-gold/80 font-bold drop-shadow-sm">CHAPTER {ch.num}</p>
+                  <h3 className="font-display text-[16px] sm:text-[14px] lg:text-[18px] tracking-[0.2em] leading-tight mb-3 drop-shadow-md">
+                    {ch.realm.toUpperCase()}
+                  </h3>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className={`w-1.5 h-1.5 rounded-full ${activeChapter === i ? 'bg-gold' : 'bg-gold/40'}`} />
+                  <p className="font-body text-sm text-foreground/80 font-medium">{ch.threat}</p>
+                </div>
               </div>
+              <div className={`absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold to-transparent transform ${activeChapter === i ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0'} transition-all duration-500 origin-left`} />
             </button>
           ))}
         </div>
@@ -378,30 +386,40 @@ const CreaturesSection = () => {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.35 }}
-              className={`mb-8 pixel-border border ${chapter.accentBorder} bg-background/70 backdrop-blur-sm overflow-hidden`}
+              className={`mb-10 rounded-sm border-2 ${chapter.accentBorder} bg-background/80 backdrop-blur-md overflow-hidden shadow-[0_0_30px_hsl(var(--gold)/0.1)]`}
             >
-              <div className="grid md:grid-cols-[220px,1fr] gap-0">
-                <div className={`relative min-h-[220px] bg-gradient-to-br ${chapter.detailOverlay}`}>
+              <div className="grid md:grid-cols-[300px,1fr] lg:grid-cols-[400px,1fr] gap-0 h-full">
+                <div className={`relative min-h-[300px] md:min-h-[400px] lg:min-h-[500px] bg-gradient-to-br ${chapter.detailOverlay} flex items-center justify-center p-8 border-r border-gold/10 overflow-hidden`}>
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,rgba(0,0,0,0.8)_100%)] pointer-events-none z-10" />
                   <img
                     src={chapterBoss.image}
                     alt={chapterBoss.name}
-                    className="w-full h-full object-contain p-5"
+                    className="absolute inset-0 w-full h-full object-cover filter drop-shadow-[0_0_20px_rgba(0,0,0,0.8)] transition-transform duration-1000 hover:scale-110"
                   />
-                  <div className="absolute top-3 left-3 font-display text-[11px] tracking-[0.25em] px-2 py-1 border border-gold/50 bg-gold/20 text-gold-light">
+                  <div className="absolute top-4 left-4 font-display text-[12px] tracking-[0.3em] px-3 py-1.5 border border-gold/60 bg-gold/20 backdrop-blur-sm text-gold-light shadow-[0_0_20px_hsl(var(--gold)/0.4)] z-20">
                     CHAPTER BOSS
                   </div>
                 </div>
 
-                <div className="p-5 md:p-6">
-                  <div className="flex flex-wrap items-center gap-2 mb-2">
-                    <p className="font-display text-[11px] tracking-[0.3em] text-gold/60">BOSS ENCOUNTER</p>
-                    <span className="font-display text-[10px] tracking-[0.22em] px-2 py-1 border border-gold/20 text-foreground/80">
+                <div className="p-8 md:p-10 flex flex-col justify-center relative bg-background/50">
+                  <div className="absolute top-0 right-0 p-8 opacity-10 pointer-events-none">
+                    <span className="font-display text-8xl text-gold">{chapter.num}</span>
+                  </div>
+                  <div className="flex flex-wrap items-center gap-3 mb-4">
+                    <p className="font-display text-[12px] tracking-[0.4em] text-gold/80 font-bold">BOSS ENCOUNTER</p>
+                    <span className="w-1.5 h-1.5 bg-gold/50 rounded-full" />
+                    <span className="font-display text-[11px] tracking-[0.3em] px-3 py-1 border border-gold/30 bg-background/50 text-foreground/90">
                       {chapter.title.toUpperCase()}
                     </span>
                   </div>
-                  <h3 className="font-display text-[22px] tracking-wider text-gold mb-2">{chapterBoss.name.toUpperCase()}</h3>
-                  <p className="font-display text-[12px] tracking-[0.2em] text-muted-foreground mb-3">{chapterBoss.role.toUpperCase()}</p>
-                  <p className="font-body text-foreground/85 text-sm leading-relaxed max-w-2xl">{chapterBoss.desc}</p>
+                  <h3 className="font-display text-[32px] md:text-[40px] tracking-widest text-gold mb-3 drop-shadow-lg">{chapterBoss.name.toUpperCase()}</h3>
+                  <div className="flex items-center gap-4 mb-6">
+                    <p className="font-display text-[14px] tracking-[0.3em] text-muted-foreground bg-background/40 px-3 py-1 border border-white/5">{chapterBoss.role.toUpperCase()}</p>
+                    <span className={`font-display text-[12px] tracking-[0.2em] px-3 py-1 border ${ELEMENT_COLORS[chapterBoss.element]} bg-background/40`}>
+                      {chapterBoss.element}
+                    </span>
+                  </div>
+                  <p className="font-body text-foreground/90 text-base md:text-lg leading-relaxed max-w-3xl drop-shadow-md">{chapterBoss.desc}</p>
                 </div>
               </div>
             </motion.div>
@@ -410,106 +428,111 @@ const CreaturesSection = () => {
               {chapter.creatures.map((creature, i) => (
                 <motion.div
                   key={creature.name}
-                  className={`group relative cursor-pointer pixel-border overflow-hidden transition-all duration-300 hover:-translate-y-1.5 ${
+                  className={`group relative cursor-pointer overflow-hidden rounded-sm border transition-all duration-500 hover:-translate-y-2 ${
                     selectedCreature?.name === creature.name
-                      ? `ring-2 ring-gold/50 ${chapter.accentBorder}`
-                      : 'hover:border-gold/30'
+                      ? `ring-2 ring-gold/70 ${chapter.accentBorder} shadow-[0_0_40px_hsl(var(--gold)/0.2)]`
+                      : 'border-white/10 hover:border-gold/50 shadow-lg hover:shadow-[0_0_20px_hsl(var(--gold)/0.15)]'
                   } ${
-                    creature.isBoss ? 'ring-1 ring-gold/35 shadow-[0_0_24px_hsl(var(--gold)/0.18)]' : ''
+                    creature.isBoss ? 'ring-1 ring-gold/50 shadow-[0_0_30px_hsl(var(--gold)/0.25)]' : ''
                   }`}
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: i * 0.08, duration: 0.35 }}
+                  transition={{ delay: i * 0.08, duration: 0.4 }}
                   onClick={() =>
                     setSelectedCreature(
                       selectedCreature?.name === creature.name ? null : creature
                     )
                   }
                 >
-                  <div className="relative h-[370px] overflow-hidden">
-                    <div className={`absolute inset-0 bg-gradient-to-br ${chapter.detailOverlay}`} />
+                  <div className="relative h-[480px] overflow-hidden bg-background group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-shadow duration-500">
+                    <div className={`absolute inset-0 bg-gradient-to-br ${chapter.detailOverlay} opacity-80`} />
                     <img
                       src={creature.image}
                       alt={creature.name}
-                      className="relative z-[1] w-full h-full object-contain px-6 pt-6 pb-24 transition-transform duration-700 group-hover:scale-110"
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 filter drop-shadow-2xl mix-blend-normal opacity-90 group-hover:opacity-100 pointer-events-none"
                     />
-                    <div className={`absolute inset-0 bg-gradient-to-t ${chapter.imageOverlay}`} />
+                    <div className={`absolute inset-0 bg-gradient-to-t ${chapter.imageOverlay} opacity-90`} />
                     <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background via-background/85 to-transparent" />
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,hsl(var(--gold)/0.18),transparent_60%)]" />
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,hsl(var(--gold)/0.15),transparent_60%)]" />
 
-                    <div className="absolute top-3 right-3">
-                      <span className={`font-display text-[11px] tracking-[0.2em] px-2 py-1 border ${ELEMENT_COLORS[creature.element]}`}>
+                    <div className="absolute top-3 right-3 z-10">
+                      <span className={`font-display text-[11px] tracking-[0.2em] px-2 py-1 border ${ELEMENT_COLORS[creature.element]} bg-background/50 backdrop-blur-sm`}>
                         {creature.element}
                       </span>
                     </div>
 
                     {creature.isBoss && (
-                      <div className="absolute top-3 left-3 font-display text-[10px] tracking-[0.22em] px-2 py-1 border border-gold/50 bg-gold/20 text-gold-light">
+                      <div className="absolute top-3 left-3 font-display text-[10px] tracking-[0.22em] px-2 py-1 border border-gold/50 bg-gold/20 backdrop-blur-sm text-gold-light shadow-[0_0_15px_hsl(var(--gold)/0.3)] z-10">
                         BOSS
                       </div>
                     )}
 
-                    <div className="absolute bottom-0 left-0 right-0 p-4 bg-background/75 backdrop-blur-md border-t border-gold/15 min-h-[96px] flex flex-col justify-end">
-                      <p className="font-display text-[10px] tracking-[0.25em] text-gold/60 mb-1">
+                    <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-background via-background/95 to-background/40 backdrop-blur-sm border-t border-gold/20 min-h-[110px] flex flex-col justify-end z-10">
+                      <p className="font-display text-[10px] tracking-[0.25em] text-gold/80 mb-1 drop-shadow-md">
                         {creature.role.toUpperCase()}
                       </p>
-                      <h3 className="font-display text-[15px] leading-tight tracking-wider text-foreground group-hover:text-gold transition-colors" style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                      <h3 className="font-display text-[18px] leading-tight tracking-widest text-foreground group-hover:text-gold transition-colors drop-shadow-lg" style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
                         {creature.name.toUpperCase()}
                       </h3>
                     </div>
 
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[linear-gradient(120deg,transparent_20%,hsl(var(--gold)/0.14)_48%,transparent_75%)]" />
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[linear-gradient(120deg,transparent_20%,hsl(var(--gold)/0.1)_48%,transparent_75%)] pointer-events-none z-20" />
                   </div>
                 </motion.div>
               ))}
             </div>
 
-            <AnimatePresence>
+            <AnimatePresence mode="wait">
               {selectedCreature && (
                 <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: 'auto' }}
-                  exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="overflow-hidden"
+                  key={selectedCreature.name}
+                  initial={{ opacity: 0, height: 0, y: 20 }}
+                  animate={{ opacity: 1, height: 'auto', y: 0 }}
+                  exit={{ opacity: 0, height: 0, y: -20 }}
+                  transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
+                  className="overflow-hidden mt-8"
                 >
-                  <div className={`relative pixel-border p-6 md:p-8 bg-background/80 backdrop-blur-sm border ${chapter.accentBorder} overflow-hidden`}>
-                    <div className={`absolute inset-0 bg-gradient-to-br ${chapter.detailOverlay} opacity-35`} />
-                    <div className="flex flex-col md:flex-row gap-6 items-start">
-                      <img
-                        src={selectedCreature.image}
-                        alt={selectedCreature.name}
-                        className="relative z-[1] w-24 h-24 md:w-32 md:h-32 object-contain pixel-border flex-shrink-0 bg-background/30"
-                      />
-                      <div className="relative z-[1] flex-1">
-                        <div className="flex items-center gap-3 mb-2 flex-wrap">
-                          <h4 className="font-display text-[18px] tracking-wider text-gold">
+                  <div className={`relative rounded-sm border p-8 md:p-12 bg-background/90 backdrop-blur-xl border-2 ${chapter.accentBorder} overflow-hidden shadow-[0_0_50px_hsl(var(--gold)/0.15)]`}>
+                    <div className={`absolute inset-0 bg-gradient-to-br ${chapter.detailOverlay} opacity-50`} />
+                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--gold)/0.1),transparent_50%)]" />
+                    <div className="flex flex-col md:flex-row gap-10 items-center md:items-start relative z-10">
+                      <div className="relative group perspective-1000 w-40 h-40 md:w-56 md:h-56 flex-shrink-0">
+                        <div className="absolute inset-0 bg-gradient-to-tr from-gold/20 to-transparent rounded-full blur-2xl opacity-50 group-hover:opacity-80 transition-opacity duration-700" />
+                        <img
+                          src={selectedCreature.image}
+                          alt={selectedCreature.name}
+                          className="relative z-[1] w-full h-full object-contain rounded-full bg-background/40 backdrop-blur-sm p-4 filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)] transition-transform duration-700 hover:rotate-2 hover:scale-105"
+                        />
+                      </div>
+                      <div className="flex-1 w-full">
+                        <div className="flex items-center gap-4 mb-4 flex-wrap">
+                          <h4 className="font-display text-[28px] md:text-[36px] tracking-widest text-gold drop-shadow-md">
                             {selectedCreature.name.toUpperCase()}
                           </h4>
-                          <span className={`font-display text-[11px] tracking-[0.2em] px-2 py-1 border ${ELEMENT_COLORS[selectedCreature.element]}`}>
+                          <span className={`font-display text-[12px] tracking-[0.3em] px-3 py-1.5 border ${ELEMENT_COLORS[selectedCreature.element]} bg-background/50 shadow-sm`}>
                             {selectedCreature.element}
                           </span>
                         </div>
-                        <p className="font-display text-[12px] tracking-[0.2em] text-muted-foreground mb-3">
+                        <p className="font-display text-[14px] tracking-[0.3em] text-muted-foreground mb-6 bg-background/30 inline-block px-4 py-1.5 border border-white/5">
                           {selectedCreature.role.toUpperCase()}
                         </p>
-                        <p className="text-foreground/80 text-sm leading-relaxed font-body">
+                        <p className="text-foreground/90 text-base md:text-lg leading-relaxed font-body mb-8 max-w-4xl drop-shadow-sm">
                           {selectedCreature.desc}
                         </p>
 
-                        <div className="mt-4 pt-4 border-t border-gold/15 grid sm:grid-cols-3 gap-2">
-                          <div className="bg-background/35 border border-gold/15 px-3 py-2">
-                            <p className="font-display text-[10px] tracking-[0.22em] text-gold/65">DOMAIN</p>
-                            <p className="font-body text-xs text-foreground/80 mt-1">{chapter.realm}</p>
+                        <div className="grid sm:grid-cols-3 gap-4 pt-6 border-t border-gold/20">
+                          <div className="bg-background/40 border border-gold/20 p-4 backdrop-blur-sm hover:bg-background/60 transition-colors">
+                            <p className="font-display text-[11px] tracking-[0.3em] text-gold/80 mb-2">DOMAIN</p>
+                            <p className="font-body text-sm text-foreground/90 font-medium">{chapter.realm}</p>
                           </div>
-                          <div className="bg-background/35 border border-gold/15 px-3 py-2">
-                            <p className="font-display text-[10px] tracking-[0.22em] text-gold/65">THREAT</p>
-                            <p className="font-body text-xs text-foreground/80 mt-1">{chapter.threat}</p>
+                          <div className="bg-background/40 border border-gold/20 p-4 backdrop-blur-sm hover:bg-background/60 transition-colors">
+                            <p className="font-display text-[11px] tracking-[0.3em] text-gold/80 mb-2">THREAT</p>
+                            <p className="font-body text-sm text-foreground/90 font-medium">{chapter.threat}</p>
                           </div>
-                          <div className="bg-background/35 border border-gold/15 px-3 py-2">
-                            <p className="font-display text-[10px] tracking-[0.22em] text-gold/65">ENCOUNTER TYPE</p>
-                            <p className="font-body text-xs text-foreground/80 mt-1">
-                              {selectedCreature.isBoss ? 'Boss Encounter' : 'Field Encounter'}
+                          <div className="bg-background/40 border border-gold/20 p-4 backdrop-blur-sm hover:bg-background/60 transition-colors">
+                            <p className="font-display text-[11px] tracking-[0.3em] text-gold/80 mb-2">ENCOUNTER</p>
+                            <p className="font-body text-sm text-foreground/90 font-medium">
+                              {selectedCreature.isBoss ? 'Epic Boss Battle' : 'Field Encounter'}
                             </p>
                           </div>
                         </div>
