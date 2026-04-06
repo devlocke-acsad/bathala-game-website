@@ -43,15 +43,19 @@ const AboutSection = () => {
               <div className="absolute -right-10 -top-10 w-24 h-24 rounded-full bg-gold/10 blur-2xl pointer-events-none" />
 
               <div className="relative">
-                <div className="w-12 h-12 mb-5 border border-gold/35 bg-background/40 text-gold flex items-center justify-center font-display text-sm tracking-[0.2em]">
-                  {initialsFromName(member.name)}
+                <div className="w-full h-48 mb-5 rounded-sm border border-gold/30 bg-background/50 flex flex-col items-center justify-center shadow-inner overflow-hidden relative group-hover:border-gold/50 transition-colors">
+                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,168,68,0.05),transparent_70%)]" />
+                  <svg className="w-12 h-12 text-gold/30 mb-2 group-hover:text-gold/50 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                  </svg>
+                  <span className="font-display text-[10px] tracking-widest text-gold/40 group-hover:text-gold/60 transition-colors">IMAGE PENDING</span>
                 </div>
 
-                <p className="font-display text-[12px] md:text-[13px] tracking-[0.12em] text-foreground leading-loose min-h-[64px]">
+                <p className="font-display text-[12px] md:text-[13px] tracking-[0.12em] text-foreground leading-loose min-h-[40px]">
                   {member.name}
                 </p>
 
-                <div className="mt-4 pt-3 border-t border-gold/15 flex items-center justify-between">
+                <div className="mt-2 pt-3 border-t border-gold/15 flex items-center justify-between">
                   <span className="font-display text-[10px] tracking-[0.2em] text-gold/70">
                     {member.role}
                   </span>

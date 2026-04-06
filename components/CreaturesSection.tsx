@@ -382,6 +382,58 @@ const CreaturesSection = () => {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4 }}
           >
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
+              {chapter.creatures
+                .filter((creature) => !creature.isBoss)
+                .map((creature, i) => (
+                <motion.div
+                  key={creature.name}
+                  className={`group relative cursor-pointer overflow-hidden rounded-sm border transition-all duration-500 hover:-translate-y-2 ${
+                    selectedCreature?.name === creature.name
+                      ? `ring-2 ring-gold/70 ${chapter.accentBorder} shadow-[0_0_40px_hsl(var(--gold)/0.2)]`
+                      : 'border-white/10 hover:border-gold/50 shadow-lg hover:shadow-[0_0_20px_hsl(var(--gold)/0.15)]'
+                  }`}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: i * 0.08, duration: 0.4 }}
+                  onClick={() =>
+                    setSelectedCreature(
+                      selectedCreature?.name === creature.name ? null : creature
+                    )
+                  }
+                >
+                  <div className="relative h-[480px] overflow-hidden bg-background">
+                    <div className={`absolute inset-0 bg-gradient-to-br ${chapter.detailOverlay} opacity-0 group-hover:opacity-80 transition-opacity duration-500`} />
+                    <img
+                      src={creature.image}
+                      alt={creature.name}
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 pointer-events-none"
+                    />
+                    <div className={`absolute inset-0 bg-gradient-to-t ${chapter.imageOverlay} opacity-0 group-hover:opacity-90 transition-opacity duration-500`} />
+                    <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background via-background/80 to-transparent" />
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,hsl(var(--gold)/0.15),transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                    <div className="absolute top-3 right-3 z-10 transition-opacity duration-300 opacity-0 group-hover:opacity-100">
+                      <span className={`font-display text-[11px] tracking-[0.2em] px-2 py-1 border ${ELEMENT_COLORS[creature.element]} bg-background/50 backdrop-blur-sm`}>
+                        {creature.element}
+                      </span>
+                    </div>
+
+                    <div className="absolute bottom-0 left-0 right-0 p-5 min-h-[110px] flex flex-col justify-end z-10">
+                      <p className="font-display text-[10px] tracking-[0.25em] text-gold/80 mb-1 drop-shadow-md">
+                        {creature.role.toUpperCase()}
+                      </p>
+                      <h3 className="font-display text-[18px] leading-tight tracking-widest text-foreground group-hover:text-gold transition-colors drop-shadow-lg" style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                        {creature.name.toUpperCase()}
+                      </h3>
+                    </div>
+
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[linear-gradient(120deg,transparent_20%,hsl(var(--gold)/0.1)_48%,transparent_75%)] pointer-events-none z-20" />
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
@@ -394,7 +446,7 @@ const CreaturesSection = () => {
                   <img
                     src={chapterBoss.image}
                     alt={chapterBoss.name}
-                    className="absolute inset-0 w-full h-full object-cover filter drop-shadow-[0_0_20px_rgba(0,0,0,0.8)] transition-transform duration-1000 hover:scale-110"
+                    className="absolute inset-0 w-full h-full object-cover border border-white/5 opacity-100 transition-transform duration-1000 hover:scale-110"
                   />
                   <div className="absolute top-4 left-4 font-display text-[12px] tracking-[0.3em] px-3 py-1.5 border border-gold/60 bg-gold/20 backdrop-blur-sm text-gold-light shadow-[0_0_20px_hsl(var(--gold)/0.4)] z-20">
                     CHAPTER BOSS
@@ -402,9 +454,6 @@ const CreaturesSection = () => {
                 </div>
 
                 <div className="p-8 md:p-10 flex flex-col justify-center relative bg-background/50">
-                  <div className="absolute top-0 right-0 p-8 opacity-10 pointer-events-none">
-                    <span className="font-display text-8xl text-gold">{chapter.num}</span>
-                  </div>
                   <div className="flex flex-wrap items-center gap-3 mb-4">
                     <p className="font-display text-[12px] tracking-[0.4em] text-gold/80 font-bold">BOSS ENCOUNTER</p>
                     <span className="w-1.5 h-1.5 bg-gold/50 rounded-full" />
@@ -482,64 +531,86 @@ const CreaturesSection = () => {
               ))}
             </div>
 
-            <AnimatePresence mode="wait">
+            <AnimatePresence>
               {selectedCreature && (
-                <motion.div
-                  key={selectedCreature.name}
-                  initial={{ opacity: 0, height: 0, y: 20 }}
-                  animate={{ opacity: 1, height: 'auto', y: 0 }}
-                  exit={{ opacity: 0, height: 0, y: -20 }}
-                  transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
-                  className="overflow-hidden mt-8"
-                >
-                  <div className={`relative rounded-sm border p-8 md:p-12 bg-background/90 backdrop-blur-xl border-2 ${chapter.accentBorder} overflow-hidden shadow-[0_0_50px_hsl(var(--gold)/0.15)]`}>
-                    <div className={`absolute inset-0 bg-gradient-to-br ${chapter.detailOverlay} opacity-50`} />
-                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--gold)/0.1),transparent_50%)]" />
-                    <div className="flex flex-col md:flex-row gap-10 items-center md:items-start relative z-10">
-                      <div className="relative group perspective-1000 w-40 h-40 md:w-56 md:h-56 flex-shrink-0">
-                        <div className="absolute inset-0 bg-gradient-to-tr from-gold/20 to-transparent rounded-full blur-2xl opacity-50 group-hover:opacity-80 transition-opacity duration-700" />
-                        <img
-                          src={selectedCreature.image}
-                          alt={selectedCreature.name}
-                          className="relative z-[1] w-full h-full object-contain rounded-full bg-background/40 backdrop-blur-sm p-4 filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)] transition-transform duration-700 hover:rotate-2 hover:scale-105"
-                        />
-                      </div>
-                      <div className="flex-1 w-full">
-                        <div className="flex items-center gap-4 mb-4 flex-wrap">
-                          <h4 className="font-display text-[28px] md:text-[36px] tracking-widest text-gold drop-shadow-md">
-                            {selectedCreature.name.toUpperCase()}
-                          </h4>
-                          <span className={`font-display text-[12px] tracking-[0.3em] px-3 py-1.5 border ${ELEMENT_COLORS[selectedCreature.element]} bg-background/50 shadow-sm`}>
-                            {selectedCreature.element}
-                          </span>
-                        </div>
-                        <p className="font-display text-[14px] tracking-[0.3em] text-muted-foreground mb-6 bg-background/30 inline-block px-4 py-1.5 border border-white/5">
-                          {selectedCreature.role.toUpperCase()}
-                        </p>
-                        <p className="text-foreground/90 text-base md:text-lg leading-relaxed font-body mb-8 max-w-4xl drop-shadow-sm">
-                          {selectedCreature.desc}
-                        </p>
+                <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-hidden">
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="absolute inset-0 bg-background/80 backdrop-blur-sm"
+                    onClick={() => setSelectedCreature(null)}
+                  />
+                  
+                  <motion.div
+                    key={selectedCreature.name}
+                    initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                    transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
+                    className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto overflow-x-hidden rounded-sm z-10 custom-scrollbar"
+                  >
+                    <div className={`relative border p-8 md:p-12 bg-background/95 backdrop-blur-xl border-2 ${chapter.accentBorder} shadow-[0_0_50px_hsl(var(--gold)/0.15)]`}>
+                      <button 
+                        onClick={() => setSelectedCreature(null)}
+                        className="absolute top-4 right-4 text-gold/60 hover:text-gold p-2 bg-background/50 border border-gold/20 rounded-sm transition-colors z-30 shadow-md hover:bg-background/80 cursor-pointer"
+                      >
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <line x1="18" y1="6" x2="6" y2="18"></line>
+                          <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                      </button>
 
-                        <div className="grid sm:grid-cols-3 gap-4 pt-6 border-t border-gold/20">
-                          <div className="bg-background/40 border border-gold/20 p-4 backdrop-blur-sm hover:bg-background/60 transition-colors">
-                            <p className="font-display text-[11px] tracking-[0.3em] text-gold/80 mb-2">DOMAIN</p>
-                            <p className="font-body text-sm text-foreground/90 font-medium">{chapter.realm}</p>
+                      <div className={`absolute inset-0 bg-gradient-to-br ${chapter.detailOverlay} opacity-50 pointer-events-none`} />
+                      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--gold)/0.1),transparent_50%)] pointer-events-none" />
+                      
+                      <div className="flex flex-col md:flex-row gap-10 items-center md:items-start relative z-10">
+                        <div className="relative group perspective-1000 w-48 h-48 md:w-64 md:h-64 flex-shrink-0">
+                          <div className="absolute inset-0 bg-gradient-to-tr from-gold/20 to-transparent rounded-full blur-2xl opacity-50 group-hover:opacity-80 transition-opacity duration-700 pointer-events-none" />
+                          <img
+                            src={selectedCreature.image}
+                            alt={selectedCreature.name}
+                            className="relative z-[1] w-full h-full object-contain rounded-full bg-background/40 backdrop-blur-sm p-4 filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)] transition-transform duration-700 hover:rotate-2 hover:scale-105"
+                          />
+                        </div>
+                        <div className="flex-1 w-full">
+                          <div className="flex items-center gap-4 mb-4 flex-wrap pr-12">
+                            <h4 className="font-display text-[32px] md:text-[40px] tracking-widest text-gold drop-shadow-md">
+                              {selectedCreature.name.toUpperCase()}
+                            </h4>
+                            <span className={`font-display text-[12px] tracking-[0.3em] px-3 py-1.5 border ${ELEMENT_COLORS[selectedCreature.element]} bg-background/50 shadow-sm`}>
+                              {selectedCreature.element}
+                            </span>
                           </div>
-                          <div className="bg-background/40 border border-gold/20 p-4 backdrop-blur-sm hover:bg-background/60 transition-colors">
-                            <p className="font-display text-[11px] tracking-[0.3em] text-gold/80 mb-2">THREAT</p>
-                            <p className="font-body text-sm text-foreground/90 font-medium">{chapter.threat}</p>
-                          </div>
-                          <div className="bg-background/40 border border-gold/20 p-4 backdrop-blur-sm hover:bg-background/60 transition-colors">
-                            <p className="font-display text-[11px] tracking-[0.3em] text-gold/80 mb-2">ENCOUNTER</p>
-                            <p className="font-body text-sm text-foreground/90 font-medium">
-                              {selectedCreature.isBoss ? 'Epic Boss Battle' : 'Field Encounter'}
-                            </p>
+                          <p className="font-display text-[14px] tracking-[0.3em] text-muted-foreground mb-6 bg-background/30 inline-block px-4 py-1.5 border border-white/5">
+                            {selectedCreature.role.toUpperCase()}
+                          </p>
+                          <p className="text-foreground/90 text-base md:text-lg leading-relaxed font-body mb-8 max-w-4xl drop-shadow-sm">
+                            {selectedCreature.desc}
+                          </p>
+
+                          <div className="grid sm:grid-cols-3 gap-4 pt-6 border-t border-gold/20">
+                            <div className="bg-background/80 border border-gold/20 p-4 rounded-sm shadow-inner overflow-hidden relative">
+                              <p className="font-display text-[11px] tracking-[0.3em] text-gold/80 mb-2 relative z-10">DOMAIN</p>
+                              <p className="font-body text-sm text-foreground/90 font-medium relative z-10">{chapter.realm}</p>
+                            </div>
+                            <div className="bg-background/80 border border-gold/20 p-4 rounded-sm shadow-inner overflow-hidden relative">
+                              <p className="font-display text-[11px] tracking-[0.3em] text-gold/80 mb-2 relative z-10">THREAT</p>
+                              <p className="font-body text-sm text-foreground/90 font-medium relative z-10">{chapter.threat}</p>
+                            </div>
+                            <div className="bg-background/80 border border-gold/20 p-4 rounded-sm shadow-inner overflow-hidden relative">
+                              <p className="font-display text-[11px] tracking-[0.3em] text-gold/80 mb-2 relative z-10">ENCOUNTER</p>
+                              <p className="font-body text-sm text-foreground/90 font-medium relative z-10">
+                                {selectedCreature.isBoss ? 'Epic Boss Battle' : 'Field Encounter'}
+                              </p>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </motion.div>
+                  </motion.div>
+                </div>
               )}
             </AnimatePresence>
           </motion.div>
