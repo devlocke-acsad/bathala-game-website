@@ -129,16 +129,16 @@ const ThesisSection = () => {
             </div>
 
             {/* Right — key terms */}
-            <div className="md:w-48 flex flex-row md:flex-col gap-2">
+            <div className="md:w-48 flex flex-wrap md:flex-col gap-2">
               <span className="font-display text-[11px] tracking-[0.3em] text-gold/40 mb-1 hidden md:block">
                 KEY AREAS
               </span>
               {active.highlights.map((h) => (
                 <div
                   key={h}
-                  className="px-3 py-2 bg-gold/5 border border-gold/15 text-center"
+                  className="px-3 py-2 bg-gold/5 border border-gold/15 text-center flex-1 min-w-0 md:flex-none"
                 >
-                  <span className="font-display text-[11px] tracking-wider text-gold/70">
+                  <span className="font-display text-[10px] md:text-[11px] tracking-wider text-gold/70 break-words whitespace-normal">
                     {h.toUpperCase()}
                   </span>
                 </div>

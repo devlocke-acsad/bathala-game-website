@@ -65,11 +65,24 @@
 
   html {
     scroll-behavior: smooth;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
   body {
     @apply bg-background text-foreground;
     font-family: 'Playfair Display', serif;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  #root {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-x: clip;
   }
 
   h1,
